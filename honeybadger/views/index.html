@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Honeybadger</title>
+        <script src="//js.honeybadger.io/v0.2/honeybadger.min.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            Honeybadger.configure({
+                //api_key: '55ab51c14a75c5d114615c3936c40be2' // Public API key
+                api_key: 'd212805380388c0387118b7a06be3c76' // Public API key
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                function MyError(name) {
+                  this.name = name;
+                  this.message = 'Honeybadger random error';
+                }
+                MyError.prototype = Object.create(Error.prototype);
+                MyError.prototype.constructor = MyError;
+                function reportError(){
+                    try {
+                        var abcd = "manoj";
+                        console.log(abcd);
+                        JSON.parse(abcd);
+                    } catch(e) {
+                        Honeybadger.notify(e);
+                    }
+                }
+                $('button').click(function(){
+                    try {
+                        throw new MyError($("#honey").val());
+                    } catch (e) {
+                        console.log(e.name);
+                        console.log(e.message);
+                        Honeybadger.notify(e);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Testing Honeybadger</p>
+        <p><input id="honey"></p>
+        <p><button>Report New Error</button></p>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Rollbar</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#reportNewError').click(function(){
+                    $.post('/', {errorName: $("#newError").val(), errorLevel: $("#level").val()});
+                });
+                $('#reportError').click(function(){
+                    $.post('/', {errorName: 'Standard Error', errorLevel: 'info'});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Testing Rollbar</p>
+        <p><button id="reportError">Report Standard Error</button></p>
+        <p><input id="newError" placeholder="error message"></p>
+        <p><input id="level" placeholder="error level eg: info, warning, critical"></p>
+        <p><button id="reportNewError">Report New Error</button></p>
+    </body>
+</html>

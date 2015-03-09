@@ -1,0 +1,48 @@
+Codeship:
+    Codeship is a free hosted Continuous Delivery Service that integrates with GitHub and Bitbucket.
+Setting up App:
+    https://codeship.com/documentation/languages/nodejs/
+Configuring Webhook:
+    https://codeship.com/documentation/integrations/webhooks/
+Events:
+    When a push to deploy has made
+Payloads:
+    Where the status can have 5 different values.
+        testing for newly started build
+        error for failed builds
+        success for passed builds
+        stopped for stopped builds
+        waiting for waiting builds
+    Sample payload for a successful build
+    Pre-build notification.
+    {
+        "build": {
+            "build_url": "https://codeship.com/projects/66929/builds/4405396",
+            "commit_url": "https://github.com/manoj2378/codeship/commit/d50affb1521ba3aa217138159a17deb3ad943ba1",
+            "project_id": 66929,
+            "build_id": 4405396,
+            "status": "testing",
+            "project_full_name": "manoj2378/codeship",
+            "commit_id": "d50affb1521ba3aa217138159a17deb3ad943ba1",
+            "short_commit_id": "d50af",
+            "message": "codeship: testing webhook",
+            "committer": "Manoj Babu",
+            "branch": "master"
+        }
+    }
+    Post-build notification.
+    {
+        "build": {
+            "build_url": "https://codeship.com/projects/66929/builds/4405396",
+            "commit_url": "https://github.com/manoj2378/codeship/commit/d50affb1521ba3aa217138159a17deb3ad943ba1",
+            "project_id": 66929,
+            "build_id": 4405396,
+            "status": "success",
+            "project_full_name": "manoj2378/codeship",
+            "commit_id": "d50affb1521ba3aa217138159a17deb3ad943ba1",
+            "short_commit_id": "d50af",
+            "message": "codeship: testing webhook",
+            "committer": "Manoj Babu",
+            "branch": "master"
+        }
+    }

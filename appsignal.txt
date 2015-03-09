@@ -1,0 +1,101 @@
+Status:
+    Worked with postman.
+Appsignal
+    Your Ruby apps can run smoother. Monitoring for Rails, Sinatra and Grape.
+    Support for Sidekiq, Delayed job & Resque
+
+Setting up ruby app
+    install ruby REF: https://gorails.com/setup/ubuntu/14.10
+        cd
+        wget http://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.1.tar.gz
+        tar -xzvf ruby-2.2.1.tar.gz
+        cd ruby-2.2.1/
+        ./configure
+        make
+        sudo make install
+        ruby -v
+        echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+        gem install bundler
+    install rails
+        gem install rails
+    mkdir yourApp
+    cd yourApp
+    rails new . -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+        This will create a sample ruby on rails app.
+        Choose Build example app and learn rails options.
+    rails server
+        Ensure the example ruby app is running successfully.
+    Configuring Appsignal with your ruby app.
+        Follow the instructions on appsignal website.
+        Add gem 'appsignal' to your Gemfile
+        run bundle install
+        ensure gem list | grep appsignal will outpur appsignal with its version
+        Setup your appsignal api key to your ruby app.
+        rails generate appsignal c18b2226-d63e-4a86-9729-e7783831bc56
+        export APPSIGNAL_PUSH_API_KEY=c18b2226-d63e-4a86-9729-e7783831bc56
+        restart your server.
+        Appsignal webapp now contains performance logs.
+Configuring Webhook:
+    Go to integrations tab on left nav.
+    Choose webhook.
+    Provide the webhook url and save webhook.
+Events:
+    The webhook configured is common for all the events.
+    It notifies 3 events.
+    -> New Marker Event
+    -> New Exception Event
+    -> New Performance Event.
+Payloads:
+    Change any code in the app to produce some error.
+        {
+            "exception": {
+                "exception": "ActionController::RoutingError",
+                "site": "RubyApp",
+                "message": "undefined local variable or method `sdasdsad' for ApplicationController:Class",
+                "action": null,
+                "path": null,
+                "revision": "No deploy yet",
+                "user": "N/A",
+                "first_backtrace_line": "app/controllers/application_controller.rb:4:in `<class:ApplicationController>'",
+                "url": "https://appsignal.com/kore-5/sites/54f57537776f72326693ca00/web/exceptions/ActionController::RoutingError",
+                "environment": "development"
+            }
+        }
+    Sample Payloads provided.
+    Marker Event:
+        "marker":{
+          "user": "thijs",
+          "site": "AppSignal",
+          "environment": "test",
+          "revision": "3107ddc4bb053d570083b4e3e425b8d62532ddc9",
+          "repository": "git@github.com:appsignal/appsignal.git",
+          "url": "https://appsignal.com/test/sites/1385f7e38c5ce90000000000/web/exceptions"
+        }
+    Exception Event:
+        "exception":{
+          "exception": "ActionView::Template::Error",
+          "site": "AppSignal",
+          "message": "undefined method `encoding' for nil:NilClass",
+          "action": "App::ErrorController#show",
+          "path": "/errors",
+          "revision": "3107ddc4bb053d570083b4e3e425b8d62532ddc9",
+          "user": "thijs",
+          "first_backtrace_line": "/usr/local/rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/cgi/util.rb:7:in `escape'",
+          "url": "https://appsignal.com/test/sites/1385f7e38c5ce90000000000/web/exceptions/App::SnapshotsController-show/ActionView::Template::Error",
+          "environment": "test"
+        }
+    Performance Event:
+        "performance":{
+          "site": "AppSignal",
+          "action": "App::ExceptionsController#index",
+          "path": "/slow",
+          "duration": 552.7897429999999,
+          "status": 200,
+          "hostname": "frontend.appsignal.com",
+          "revision": "3107ddc4bb053d570083b4e3e425b8d62532ddc9",
+          "user": "thijs",
+          "url": "https://appsignal.com/test/sites/1385f7e38c5ce90000000000/web/performance/App::ExceptionsController-index",
+          "environment": "test"
+        }
+<% if(marker){print(marker.user)} if(exception){print(exception.exception)} if(performance){print(performance.action)}%>
+<% if(marker){print(marker.user)} if(exception){print(exception.message)} if(performance){print(performance.duration)}%>

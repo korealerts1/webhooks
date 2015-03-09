@@ -1,0 +1,128 @@
+Adding a system to papertrail
+
+ls -d /etc/*syslog*
+
+look for one of rsyslog.conf, syslog-ng.conf, syslog.conf
+
+open the conf file as root user and add the following line at the bottom
+
+*.*         @logs.papertrailapp.com
+
+restart rsyslog service with 
+
+sudo service rsyslog restart
+
+In the website go to add system with its public ip.
+
+Go to system page from dashboard and add a search event,
+name the search, provide query, and choose webhook as alert trigger and provide
+webhook url
+
+Click on Test Alert
+
+Name : Papertrail
+icon : http://blog.papertrailapp.com/images/header.png
+Description : Cloud-hosted log management service
+
+Alert Name: Log search notifications 
+Alert description : Get notified whenever search category matches the logs
+
+
+"koreUxMap": {
+      "title": "<%= events[0].source_name %>/<%= events[0].hostname %> : <a href=\"<%=saved_search.html_search_url%>\"><%= saved_search.name %></a>",
+      "body": " Frequency : <%=events.length%>; Received at : <%=events[events.length-1].received_at%> <br> <%= events[events.length-1].message %>"
+    }
+Payload:
+    {
+        "min_id": "509764584127901699",
+        "max_id": "509764745562468356",
+        "events": [
+            {
+                "id": 509764584127901700,
+                "source_ip": "54.175.3.31",
+                "program": "sudo",
+                "message": " nrpe : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/usr/lib64/nagios/plugins/check_mem_process [P]resenceServer.js 70 90",
+                "received_at": "2015-03-04T05:09:30-08:00",
+                "display_received_at": "Mar 04 05:09:30",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Notice",
+                "facility": "Authpriv"
+            },
+            {
+                "id": 509764674238328800,
+                "source_ip": "54.175.3.31",
+                "program": "sudo",
+                "message": " nrpe : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/usr/lib64/nagios/plugins/check_mem_process [S]yncEmails.js 70 90",
+                "received_at": "2015-03-04T05:09:51-08:00",
+                "display_received_at": "Mar 04 05:09:51",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Notice",
+                "facility": "Authpriv"
+            },
+            {
+                "id": 509764715644497900,
+                "source_ip": "54.175.3.31",
+                "program": "CROND",
+                "message": "(root) CMD (sh /home/ec2-user/drop_cache.sh)",
+                "received_at": "2015-03-04T05:10:01-08:00",
+                "display_received_at": "Mar 04 05:10:01",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Info",
+                "facility": "Cron"
+            },
+            {
+                "id": 509764715657080800,
+                "source_ip": "54.175.3.31",
+                "program": "CROND",
+                "message": "(root) CMD (/usr/lib64/sa/sa1 1 1)",
+                "received_at": "2015-03-04T05:10:01-08:00",
+                "display_received_at": "Mar 04 05:10:01",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Info",
+                "facility": "Cron"
+            },
+            {
+                "id": 509764722187612160,
+                "source_ip": "54.175.3.31",
+                "program": "sudo",
+                "message": " nrpe : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/usr/lib64/nagios/plugins/check_cpu_process [W]orkFlowAppServer.js 70 90",
+                "received_at": "2015-03-04T05:10:03-08:00",
+                "display_received_at": "Mar 04 05:10:03",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Notice",
+                "facility": "Authpriv"
+            },
+            {
+                "id": 509764745562468350,
+                "source_ip": "54.175.3.31",
+                "program": "sudo",
+                "message": " nrpe : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/usr/lib64/nagios/plugins/check_cpu_process [S]yncEmails.js 70 90",
+                "received_at": "2015-03-04T05:10:08-08:00",
+                "display_received_at": "Mar 04 05:10:08",
+                "source_id": 74375774,
+                "source_name": "integration-dev",
+                "hostname": "integration-dev",
+                "severity": "Notice",
+                "facility": "Authpriv"
+            }
+        ],
+        "saved_search": {
+            "id": 3968724,
+            "name": "serviceenginelog",
+            "query": "root",
+            "html_edit_url": "https://papertrailapp.com/searches/3968724/edit",
+            "html_search_url": "https://papertrailapp.com/searches/3968724"
+        },
+        "reached_beginning": true,
+        "min_time_at": "2015-03-04T13:09:01Z"
+    }

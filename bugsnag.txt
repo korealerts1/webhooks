@@ -1,0 +1,167 @@
+Bugsnag 
+    Detect and diagnose crashes in your applications
+
+For reporting node.js errors
+    npm install bugsnag --save
+    require('bugsnag'); // in your app
+    bugsnag.register("48d2b7a0513ed319c58013456ba749ef");
+    bugsnag.notify(new Error("Fatal"));
+
+Configuring Webhook:
+    In Settings of your Bugsnag website, go to Team Notifications
+    Configure Webhook
+
+Events:
+    A new error is received
+    An error occurs frequently (10, 100, 1000...etc times)
+    Each time an error occurs
+    //An error is automatically reopened
+    //Project error rate increases significantly
+    User comments on an error
+
+Uri's:
+    Icon: https://bugsnag.com/error-page-logo.png
+Payloads received by the webhook:
+    
+    Payload:
+    {
+        "account": {
+            "id": "54ec2d667765623989000c83",
+            "name": "Kore",
+            "url": "https://bugsnag.com/accounts/kore-1"
+        },
+        "project": {
+            "id": "54ec2d907765623989000c89",
+            "apiKey": "48d2b7a0513ed319c58013456ba749ef",
+            "name": "Node.js",
+            "url": "https://bugsnag.com/kore-1/node-dot-js"
+        },
+        "trigger": {
+            "type": "comment",
+            "message": "Comment Added"
+        },
+        "error": {
+            "id": "54ed7f1b06e8893e5b000055",
+            "errorId": "54ed785a4b27bc2f44c534aa",
+            "exceptionClass": "Error",
+            "message": "Fatal",
+            "context": "server.js:18",
+            "releaseStage": "production",
+            "occurrences": 3,
+            "firstReceived": "2015-02-25T07:23:06.000Z",
+            "stacktrace": [
+                {
+                    "columnNumber": 16,
+                    "file": "server.js",
+                    "inProject": true,
+                    "lineNumber": 18,
+                    "method": "none"
+                },
+                {
+                    "columnNumber": 26,
+                    "file": "module.js",
+                    "lineNumber": 456,
+                    "method": "_compile"
+                },
+                {
+                    "columnNumber": 10,
+                    "file": "module.js",
+                    "lineNumber": 474,
+                    "method": "Module._extensions..js"
+                },
+                {
+                    "columnNumber": 32,
+                    "file": "module.js",
+                    "lineNumber": 356,
+                    "method": "load"
+                },
+                {
+                    "columnNumber": 12,
+                    "file": "module.js",
+                    "lineNumber": 312,
+                    "method": "Module._load"
+                },
+                {
+                    "columnNumber": 10,
+                    "file": "module.js",
+                    "lineNumber": 497,
+                    "method": "Module.runMain"
+                },
+                {
+                    "columnNumber": 16,
+                    "file": "node.js",
+                    "lineNumber": 119,
+                    "method": "startup"
+                },
+                {
+                    "columnNumber": 3,
+                    "file": "node.js",
+                    "lineNumber": 902,
+                    "method": "none"
+                }
+            ],
+            "metaData": {},
+            "url": "https://bugsnag.com/kore-1/node-dot-js/errors/54ed785a4b27bc2f44c534aa?event_id=54ed7f1b06e8893e5b000055",
+            "severity": "warning"
+        },
+        "comment": {
+            "id": "54ed7f427765623f8c000c49",
+            "message": "okay",
+            "already_emailed_addresses": []
+        },
+        "user": {
+            "name": "cvnoob",
+            "email": "cvnoob1@gmail.com"
+        }
+    }
+
+    A new error is received:
+Test payload received while configuring the webhook with requestBin  url, doesnt
+contain user data.
+    {
+        "error": {
+            "exceptionClass": "ExampleException",
+            "message": "Something really bad happened",
+            "context": "home#example",
+            "appVersion": "1.0.0",
+            "releaseStage": "production",
+            "occurrences": 42,
+            "firstReceived": "2015-02-25T08:04:01.378Z",
+            "usersAffected": 20,
+            "url": "http://bugsnag.com/errors/example/events/example",
+            "stacktrace": [
+                {
+                    "file": "app/controllers/home_controller.rb",
+                    "lineNumber": 123,
+                    "method": "example",
+                    "inProject": true
+                },
+                {
+                    "file": "app/controllers/other_controller.rb",
+                    "lineNumber": 12,
+                    "method": "broken",
+                    "inProject": true
+                },
+                {
+                    "file": "gems/junk/junkfile.rb",
+                    "lineNumber": 999,
+                    "method": "something",
+                    "inProject": false
+                },
+                {
+                    "file": "lib/important/magic.rb",
+                    "lineNumber": 4,
+                    "method": "load_something",
+                    "inProject": true
+                }
+            ]
+        },
+        "project": {
+            "name": "Example.com",
+            "url": "http://bugsnag.com/projects/example"
+        },
+        "trigger": {
+            "type": "firstException",
+            "message": "New exception"
+        }
+    }

@@ -1,0 +1,473 @@
+Rollbar:
+    Error Monitoring Service
+Setting up app:
+    Similar app like Bugsnag to report nodejs errors to Rollbar    
+Configuring webhook:
+    Go to settings, and click on notifications in the left nav.
+Events:
+    Test Notification
+    New Item
+    Every Occurrence
+    10^nth Occurrence
+    Item Resolved
+    Item Reopened
+    //Item Reactivated
+    //Deploy
+Payloads:
+    Test Notification:
+        {
+            "event_name": "test",
+            "data": {
+                "message": "This is a test payload from Rollbar. If you got this, it works!"
+            }
+        }
+    New Item:
+        {
+            "event_name": "new_item",
+            "data": {
+                "item": {
+                    "public_item_id": null,
+                    "integrations_data": {},
+                    "last_activated_timestamp": 1425550972,
+                    "assigned_user_id": null,
+                    "hash": "d594c2cc0a53025004791399d80e20852af4c988",
+                    "id": 330603864,
+                    "environment": "unspecified",
+                    "title": "final: Rollbar random error",
+                    "last_occurrence_id": 4379106169,
+                    "last_occurrence_timestamp": 1425550972,
+                    "platform": 0,
+                    "first_occurrence_timestamp": 1425550972,
+                    "project_id": 20832,
+                    "resolved_in_version": null,
+                    "status": 1,
+                    "unique_occurrences": 1,
+                    "last_occurrence": {
+                        "body": {
+                            "trace": {
+                                "frames": [],
+                                "exception": {
+                                    "message": "Rollbar random error",
+                                    "class": "final"
+                                }
+                            }
+                        },
+                        "uuid": "479bc608b52b449cafb81da4c9061845",
+                        "language": "javascript",
+                        "level": "error",
+                        "timestamp": 1425550972,
+                        "request": {
+                            "GET": {},
+                            "url": "https://localhost:3500/",
+                            "user_ip": "127.0.0.1",
+                            "headers": {
+                                "origin": "http://localhost:3500",
+                                "cookie": "m=34e2:|47ba:t|54e1:t; ajs_anonymous_id=%22b4cebbcd-deff-4a00-a46c-e6b9ebeb7af9%22; ajs_user_id=null; ajs_group_id=null",
+                                "content-length": "34",
+                                "accept-language": "en-US,en;q=0.8",
+                                "accept-encoding": "gzip, deflate",
+                                "connection": "keep-alive",
+                                "accept": "*/*",
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36",
+                                "host": "localhost:3500",
+                                "x-requested-with": "XMLHttpRequest",
+                                "referer": "http://localhost:3500/",
+                                "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                            },
+                            "POST": {
+                                "errorLevel": "warning",
+                                "errorName": "final"
+                            },
+                            "method": "POST"
+                        },
+                        "server": {
+                            "host": "ubuntu"
+                        },
+                        "environment": "unspecified",
+                        "framework": "node-js",
+                        "context": "/",
+                        "notifier": {
+                            "version": "0.4.4",
+                            "name": "node_rollbar"
+                        },
+                        "metadata": {
+                            "access_token": "411d986e3f3547e6ac504f0106392f8e",
+                            "debug": {
+                                "routes": {
+                                    "start_time": 1425549615543,
+                                    "counters": {
+                                        "post_items": 2773
+                                    }
+                                }
+                            },
+                            "customer_timestamp": 1425550951,
+                            "api_server_hostname": "dal05api2"
+                        }
+                    },
+                    "framework": 4,
+                    "total_occurrences": 1,
+                    "level": 40,
+                    "counter": 4,
+                    "first_occurrence_id": 4379106169,
+                    "activating_occurrence_id": 4379106169
+                }
+            }
+        }
+    Every Occurrence:
+        {
+            "event_name": "occurrence",
+            "data": {
+                "item": {
+                    "public_item_id": null,
+                    "integrations_data": {},
+                    "last_activated_timestamp": 1425550972,
+                    "assigned_user_id": null,
+                    "hash": "d594c2cc0a53025004791399d80e20852af4c988",
+                    "id": 330603864,
+                    "environment": "unspecified",
+                    "title": "final: Rollbar random error",
+                    "last_occurrence_id": 4379126944,
+                    "last_occurrence_timestamp": 1425551177,
+                    "platform": 0,
+                    "first_occurrence_timestamp": 1425550972,
+                    "project_id": 20832,
+                    "resolved_in_version": null,
+                    "status": 1,
+                    "unique_occurrences": 1,
+                    "framework": 4,
+                    "total_occurrences": 2,
+                    "level": 40,
+                    "counter": 4,
+                    "first_occurrence_id": 4379106169,
+                    "activating_occurrence_id": 4379106169
+                },
+                "occurrence": {
+                    "body": {
+                        "trace": {
+                            "frames": [],
+                            "exception": {
+                                "message": "Rollbar random error",
+                                "class": "final"
+                            }
+                        }
+                    },
+                    "uuid": "a95c538e3fb94de59c5f4dfbc7a23b19",
+                    "language": "javascript",
+                    "level": "error",
+                    "timestamp": 1425551177,
+                    "request": {
+                        "GET": {},
+                        "url": "https://localhost:3500/",
+                        "user_ip": "127.0.0.1",
+                        "headers": {
+                            "origin": "http://localhost:3500",
+                            "cookie": "m=34e2:|47ba:t|54e1:t; ajs_anonymous_id=%22b4cebbcd-deff-4a00-a46c-e6b9ebeb7af9%22; ajs_user_id=null; ajs_group_id=null",
+                            "content-length": "34",
+                            "accept-language": "en-US,en;q=0.8",
+                            "accept-encoding": "gzip, deflate",
+                            "connection": "keep-alive",
+                            "accept": "*/*",
+                            "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36",
+                            "host": "localhost:3500",
+                            "x-requested-with": "XMLHttpRequest",
+                            "referer": "http://localhost:3500/",
+                            "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                        },
+                        "POST": {
+                            "errorLevel": "warning",
+                            "errorName": "final"
+                        },
+                        "method": "POST"
+                    },
+                    "server": {
+                        "host": "ubuntu"
+                    },
+                    "environment": "unspecified",
+                    "framework": "node-js",
+                    "context": "/",
+                    "notifier": {
+                        "version": "0.4.4",
+                        "name": "node_rollbar"
+                    },
+                    "metadata": {
+                        "customer_timestamp": 1425551157
+                    }
+                }
+            }
+        }
+    10^nth Occurrence:
+        {
+            "event_name": "new_item",
+            "data": {
+                "item": {
+                    "public_item_id": null,
+                    "integrations_data": {},
+                    "last_activated_timestamp": 1425551357,
+                    "assigned_user_id": null,
+                    "hash": "2c131f8f4962ded1598dc35f98e73119230d2b43",
+                    "id": 330604088,
+                    "environment": "unspecified",
+                    "title": "freqCheck: Rollbar random error",
+                    "last_occurrence_id": 4379145982,
+                    "last_occurrence_timestamp": 1425551357,
+                    "platform": 0,
+                    "first_occurrence_timestamp": 1425551357,
+                    "project_id": 20832,
+                    "resolved_in_version": null,
+                    "status": 1,
+                    "unique_occurrences": 1,
+                    "last_occurrence": {
+                        "body": {
+                            "trace": {
+                                "frames": [],
+                                "exception": {
+                                    "message": "Rollbar random error",
+                                    "class": "freqCheck"
+                                }
+                            }
+                        },
+                        "uuid": "2862ba88cb8b43f896c54dafa253948c",
+                        "language": "javascript",
+                        "level": "error",
+                        "timestamp": 1425551357,
+                        "request": {
+                            "GET": {},
+                            "url": "https://localhost:3500/",
+                            "user_ip": "127.0.0.1",
+                            "headers": {
+                                "origin": "http://localhost:3500",
+                                "cookie": "m=34e2:|47ba:t|54e1:t; ajs_anonymous_id=%22b4cebbcd-deff-4a00-a46c-e6b9ebeb7af9%22; ajs_user_id=null; ajs_group_id=null",
+                                "content-length": "38",
+                                "accept-language": "en-US,en;q=0.8",
+                                "accept-encoding": "gzip, deflate",
+                                "connection": "keep-alive",
+                                "accept": "*/*",
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36",
+                                "host": "localhost:3500",
+                                "x-requested-with": "XMLHttpRequest",
+                                "referer": "http://localhost:3500/",
+                                "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                            },
+                            "POST": {
+                                "errorLevel": "warning",
+                                "errorName": "freqCheck"
+                            },
+                            "method": "POST"
+                        },
+                        "server": {
+                            "host": "ubuntu"
+                        },
+                        "environment": "unspecified",
+                        "framework": "node-js",
+                        "context": "/",
+                        "notifier": {
+                            "version": "0.4.4",
+                            "name": "node_rollbar"
+                        },
+                        "metadata": {
+                            "access_token": "411d986e3f3547e6ac504f0106392f8e",
+                            "debug": {
+                                "routes": {
+                                    "start_time": 1425551267242,
+                                    "counters": {
+                                        "post_items": 160
+                                    }
+                                }
+                            },
+                            "customer_timestamp": 1425551336,
+                            "api_server_hostname": "dal05api2"
+                        }
+                    },
+                    "framework": 4,
+                    "total_occurrences": 2,
+                    "level": 40,
+                    "counter": 5,
+                    "first_occurrence_id": 4379145982,
+                    "activating_occurrence_id": 4379145982
+                }
+            }
+        }
+    Item Resolved:
+        {
+            "event_name": "resolved_item",
+            "data": {
+                "item": {
+                    "public_item_id": null,
+                    "integrations_data": {},
+                    "last_activated_timestamp": 1425550407,
+                    "assigned_user_id": null,
+                    "hash": "640ab2bae07bedc4c163f679a746f7ab7fb5d1fa",
+                    "id": 330603335,
+                    "environment": "unspecified",
+                    "title": "Test: Rollbar random error",
+                    "last_occurrence_id": 4379049142,
+                    "last_occurrence_timestamp": 1425550407,
+                    "platform": 0,
+                    "first_occurrence_timestamp": 1425550407,
+                    "project_id": 20832,
+                    "resolved_in_version": null,
+                    "status": 2,
+                    "unique_occurrences": 1,
+                    "last_occurrence": {
+                        "body": {
+                            "trace": {
+                                "frames": [],
+                                "exception": {
+                                    "message": "Rollbar random error",
+                                    "class": "Test"
+                                }
+                            }
+                        },
+                        "uuid": "e54a95db06d54378904da41f461a69e8",
+                        "language": "javascript",
+                        "level": "error",
+                        "timestamp": 1425550407,
+                        "request": {
+                            "GET": {},
+                            "url": "https://localhost:3500/",
+                            "user_ip": "127.0.0.1",
+                            "headers": {
+                                "origin": "http://localhost:3500",
+                                "cookie": "m=34e2:|47ba:t|54e1:t; ajs_anonymous_id=%22b4cebbcd-deff-4a00-a46c-e6b9ebeb7af9%22; ajs_user_id=null; ajs_group_id=null",
+                                "content-length": "33",
+                                "accept-language": "en-US,en;q=0.8",
+                                "accept-encoding": "gzip, deflate",
+                                "connection": "keep-alive",
+                                "accept": "*/*",
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36",
+                                "host": "localhost:3500",
+                                "x-requested-with": "XMLHttpRequest",
+                                "referer": "http://localhost:3500/",
+                                "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                            },
+                            "POST": {
+                                "errorLevel": "warning",
+                                "errorName": "Test"
+                            },
+                            "method": "POST"
+                        },
+                        "server": {
+                            "host": "ubuntu"
+                        },
+                        "environment": "unspecified",
+                        "framework": "node-js",
+                        "context": "/",
+                        "notifier": {
+                            "version": "0.4.4",
+                            "name": "node_rollbar"
+                        },
+                        "metadata": {
+                            "access_token": "411d986e3f3547e6ac504f0106392f8e",
+                            "debug": {
+                                "routes": {
+                                    "start_time": 1425549554338,
+                                    "counters": {
+                                        "post_items": 935
+                                    }
+                                }
+                            },
+                            "customer_timestamp": 1425550386,
+                            "api_server_hostname": "dal05api1"
+                        }
+                    },
+                    "framework": 4,
+                    "total_occurrences": 1,
+                    "level": 40,
+                    "counter": 2,
+                    "first_occurrence_id": 4379049142,
+                    "activating_occurrence_id": 4379049142
+                }
+            }
+        }
+    Item Reopened:
+        {
+            "event_name": "reopened_item",
+            "data": {
+                "item": {
+                    "public_item_id": null,
+                    "integrations_data": {},
+                    "last_activated_timestamp": 1425551554,
+                    "assigned_user_id": null,
+                    "hash": "640ab2bae07bedc4c163f679a746f7ab7fb5d1fa",
+                    "id": 330603335,
+                    "environment": "unspecified",
+                    "title": "Test: Rollbar random error",
+                    "last_occurrence_id": 4379049142,
+                    "last_occurrence_timestamp": 1425550407,
+                    "platform": 0,
+                    "first_occurrence_timestamp": 1425550407,
+                    "project_id": 20832,
+                    "resolved_in_version": null,
+                    "status": 1,
+                    "unique_occurrences": 1,
+                    "last_occurrence": {
+                        "body": {
+                            "trace": {
+                                "frames": [],
+                                "exception": {
+                                    "message": "Rollbar random error",
+                                    "class": "Test"
+                                }
+                            }
+                        },
+                        "uuid": "e54a95db06d54378904da41f461a69e8",
+                        "language": "javascript",
+                        "level": "error",
+                        "timestamp": 1425550407,
+                        "request": {
+                            "GET": {},
+                            "url": "https://localhost:3500/",
+                            "user_ip": "127.0.0.1",
+                            "headers": {
+                                "origin": "http://localhost:3500",
+                                "cookie": "m=34e2:|47ba:t|54e1:t; ajs_anonymous_id=%22b4cebbcd-deff-4a00-a46c-e6b9ebeb7af9%22; ajs_user_id=null; ajs_group_id=null",
+                                "content-length": "33",
+                                "accept-language": "en-US,en;q=0.8",
+                                "accept-encoding": "gzip, deflate",
+                                "connection": "keep-alive",
+                                "accept": "*/*",
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36",
+                                "host": "localhost:3500",
+                                "x-requested-with": "XMLHttpRequest",
+                                "referer": "http://localhost:3500/",
+                                "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                            },
+                            "POST": {
+                                "errorLevel": "warning",
+                                "errorName": "Test"
+                            },
+                            "method": "POST"
+                        },
+                        "server": {
+                            "host": "ubuntu"
+                        },
+                        "environment": "unspecified",
+                        "framework": "node-js",
+                        "context": "/",
+                        "notifier": {
+                            "version": "0.4.4",
+                            "name": "node_rollbar"
+                        },
+                        "metadata": {
+                            "access_token": "411d986e3f3547e6ac504f0106392f8e",
+                            "debug": {
+                                "routes": {
+                                    "start_time": 1425549554338,
+                                    "counters": {
+                                        "post_items": 935
+                                    }
+                                }
+                            },
+                            "customer_timestamp": 1425550386,
+                            "api_server_hostname": "dal05api1"
+                        }
+                    },
+                    "framework": 4,
+                    "total_occurrences": 1,
+                    "level": 40,
+                    "counter": 2,
+                    "first_occurrence_id": 4379049142,
+                    "activating_occurrence_id": 4379049142
+                }
+            }
+        }

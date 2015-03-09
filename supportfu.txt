@@ -1,0 +1,211 @@
+Enchant:
+    previously known as supportfu.
+Configure webhook:
+    go to settings--> apps.
+    Choose webhook provide url
+Events:
+    New ticket creted
+    Ticket assigned
+    When user replies
+    //When customer replies
+Payloads:
+
+When ticket is created
+    {
+      "id": "54fc5aab69702d2391150000",
+      "number": 3,
+      "user_id": "54fc589069702d0ec0a20000",
+      "state": "open",
+      "subject": "sub",
+      "label_ids": [
+    
+      ],
+      "customer_id": "54fc5aaa69702d21e6000000",
+      "type": "email",
+      "reply_to": "cvnoob1@gmail.com",
+      "reply_cc": null,
+      "group_id": "54fc589069702d0ec0a00000",
+      "updated_at": "2015-03-08T14:20:27Z",
+      "created_at": "2015-03-08T14:20:27Z",
+      "spam": false,
+      "trash": false,
+      "summary": "nothing",
+      "customer": {
+        "id": "54fc5aaa69702d21e6000000",
+        "first_name": "new",
+        "last_name": "",
+        "summary": null,
+        "contacts": [
+          {
+            "id": "54fc5aaa69702d21e6010000",
+            "type": "email",
+            "value": "cvnoob1@gmail.com",
+            "identifier": "cvnoob1@gmail.com"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "54fc5aab69702d0aee160100",
+          "type": "reply",
+          "from_name": "cv noob",
+          "body": "<p>nothing</p>\n",
+          "htmlized": false,
+          "user_id": "54fc589069702d0ec0a20000",
+          "attachments": [
+    
+          ],
+          "email_id": null,
+          "created_at": "2015-03-08T14:20:27Z",
+          "from": null,
+          "to": "cvnoob1@gmail.com",
+          "cc": null,
+          "bcc": null,
+          "reply_to": null,
+          "subject": null,
+          "direction": "out",
+          "more_body": null
+        }
+      ],
+      "group": {
+        "id": "54fc589069702d0ec0a00000",
+        "name": "Support"
+      },
+      "user": {
+        "id": "54fc589069702d0ec0a20000",
+        "first_name": "cv",
+        "last_name": "noob",
+        "email": "cvnoob1@gmail.com"
+      }
+    }
+When user replies
+    {
+        "id": "54fc591769702d0ec0c60000",
+        "number": 2,
+        "user_id": "54fc589069702d0ec0a20000",
+        "state": "open",
+        "subject": "Test",
+        "label_ids": [],
+        "customer_id": "54fc591769702d1aca140000",
+        "type": "phone",
+        "reply_to": "manoj.katragadda@kore.com",
+        "reply_cc": "",
+        "group_id": "54fc589069702d0ec0a00000",
+        "updated_at": "2015-03-08T14:16:50Z",
+        "created_at": "2015-03-08T14:13:43Z",
+        "spam": false,
+        "trash": false,
+        "summary": "hi",
+        "customer": {
+            "id": "54fc591769702d1aca140000",
+            "first_name": "Manoj",
+            "last_name": "",
+            "summary": null,
+            "contacts": [
+                {
+                    "id": "54fc591769702d1aca150000",
+                    "type": "email",
+                    "value": "manoj.katragadda@kore.com",
+                    "identifier": "manoj.katragadda@kore.com"
+                }
+            ]
+        },
+        "messages": [
+            {
+                "id": "54fc591769702d0aee090100",
+                "type": "note",
+                "from_name": "cv noob",
+                "body": "<p>message</p>\n",
+                "htmlized": false,
+                "user_id": "54fc589069702d0ec0a20000",
+                "attachments": [],
+                "email_id": null,
+                "created_at": "2015-03-08T14:13:43Z"
+            },
+            {
+                "id": "54fc59d269702d0ec0e90000",
+                "type": "reply",
+                "from_name": "cv noob",
+                "body": "<p>hi</p>\n",
+                "htmlized": false,
+                "user_id": "54fc589069702d0ec0a20000",
+                "attachments": [],
+                "email_id": null,
+                "created_at": "2015-03-08T14:16:50Z",
+                "from": null,
+                "to": "manoj.katragadda@kore.com",
+                "cc": null,
+                "bcc": null,
+                "reply_to": null,
+                "subject": null,
+                "direction": "out",
+                "more_body": null
+            }
+        ],
+        "group": {
+            "id": "54fc589069702d0ec0a00000",
+            "name": "Support"
+        },
+        "user": {
+            "id": "54fc589069702d0ec0a20000",
+            "first_name": "cv",
+            "last_name": "noob",
+            "email": "cvnoob1@gmail.com"
+        }
+    }
+Ticket assigned
+    {
+        "id": "54fc591769702d0ec0c60000",
+        "number": 2,
+        "user_id": "54fc589069702d0ec0a20000",
+        "state": "open",
+        "subject": "Test",
+        "label_ids": [],
+        "customer_id": "54fc591769702d1aca140000",
+        "type": "phone",
+        "reply_to": "manoj.katragadda@kore.com",
+        "reply_cc": null,
+        "group_id": "54fc589069702d0ec0a00000",
+        "updated_at": "2015-03-08T14:14:58Z",
+        "created_at": "2015-03-08T14:13:43Z",
+        "spam": false,
+        "trash": false,
+        "summary": "message",
+        "customer": {
+            "id": "54fc591769702d1aca140000",
+            "first_name": "Manoj",
+            "last_name": "",
+            "summary": null,
+            "contacts": [
+                {
+                    "id": "54fc591769702d1aca150000",
+                    "type": "email",
+                    "value": "manoj.katragadda@kore.com",
+                    "identifier": "manoj.katragadda@kore.com"
+                }
+            ]
+        },
+        "messages": [
+            {
+                "id": "54fc591769702d0aee090100",
+                "type": "note",
+                "from_name": "cv noob",
+                "body": "<p>message</p>\n",
+                "htmlized": false,
+                "user_id": "54fc589069702d0ec0a20000",
+                "attachments": [],
+                "email_id": null,
+                "created_at": "2015-03-08T14:13:43Z"
+            }
+        ],
+        "group": {
+            "id": "54fc589069702d0ec0a00000",
+            "name": "Support"
+        },
+        "user": {
+            "id": "54fc589069702d0ec0a20000",
+            "first_name": "cv",
+            "last_name": "noob",
+            "email": "cvnoob1@gmail.com"
+        }
+    }

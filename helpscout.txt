@@ -1,0 +1,1313 @@
+Help Scout
+    Help Scout is a web-based help desk designed for a great customer experience.
+Setting up Events:
+    All on web, make conversations, create customers
+Setting up Webhook:
+    click on Apps on top nav, choose Webhook app at the bottom of the page,
+    provide url and save changes.
+Events:
+    Conversation
+        Assigned	    convo.assigned	
+        Created	        convo.created	
+        Deleted	        convo.deleted
+        Merged	        convo.merged	
+        Moved	        convo.moved	
+        Status Updated	convo.status	
+        Tags Updated	convo.tags	
+        Customer Reply	convo.customer.reply.created	
+        Agent Reply	    convo.agent.reply.created	
+        Note Created	convo.note.created	
+    Customer	
+        Customer Created	customer.created
+
+Customer Reply Created
+    ---> Tried but not working.
+    Request Header:
+    X-Helpscout-Event: convo.customer.reply.created
+    Request Payload:
+    {   
+        "id": 291938,
+        "type": "email",
+        "folder": "1234",
+        "isDraft": "false",
+        "number": 349,
+        "owner": {
+            "id": 1234,
+            "firstName": "Jack",
+            "lastName": "Sprout",
+            "email": "jack.sprout@gmail.com",
+            "phone": null,
+            "type": "user"
+        },
+        "mailbox": {
+            "id": 1234,
+            "name": "My Mailbox"
+        },
+        "customer": {
+            "id": 29418,
+            "firstName": "Vernon",
+            "lastName": "Bear",
+            "email": "vbear@mywork.com",
+            "phone": "800-555-1212",
+            "type": "customer"
+        },
+        "threadCount": 4,
+        "status": "active",
+        "subject": "I need help!",
+        "preview": "Hello, I tried to download the file off your site...",
+        "createdBy": {
+            "id": 29418,
+            "firstName": "Vernon",
+            "lastName": "Bear",
+            "email": "vbear@mywork.com",
+            "phone": null,
+            "type": "customer"
+        },
+        "createdAt": "2012-07-23T12:34:12Z",
+        "modifiedAt": "2012-07-24T20:18:33Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "email",
+            "via": "customer"
+        },
+        "cc": [
+            "cc1@somewhere.com",
+            "cc2@somewhere.com"
+        ],
+        "bcc": [
+            "bcc1@somewhere.com",
+            "bcc2@somewhere.com"
+        ],
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "threads": [{
+            "id": 88171881,
+            "assignedTo": {
+                "id": 1234,
+                "firstName": "Jack",
+                "lastName": "Sprout",
+                "email": "jack.sprout@gmail.com",
+                "phone": null,
+                "type": "user"
+            },
+            "status": "active",
+            "createdAt": "2012-07-23T12:34:12Z",
+            "createdBy": {
+                "id": 1234,
+                "firstName": "Jack",
+                "lastName": "Sprout",
+                "email": "jack.sprout@gmail.com",
+                "phone": null,
+                "type": "user"
+            },
+            "source": {
+                "type": "web",
+                "via": "user"
+            },
+            "type": "message",
+            "state": "published",
+            "customer": {
+                "id": 29418,
+                "firstName": "Vernon",
+                "lastName": "Bear",
+                "email": "vbear@mywork.com",
+                "phone": "800-555-1212",
+                "type": "customer"
+            },
+            "fromMailbox": null,
+            "body": "This is what I have to say. Thank you.",
+            "to": [
+                "customer@somewhere.com"
+            ],
+            "cc": [
+                "cc1@somewhere.com",
+                "cc2@somewhere.com"
+            ],
+            "bcc": [
+                "bcc1@somewhere.com",
+                "bcc2@somewhere.com"
+            ],
+            "attachments": [{
+                "id": 12391,
+                "mimeType": "image/jpeg",
+                "filename": "logo.jpg",
+                "size": 22,
+                "width": 160,
+                "height": 160,
+                "url": "https://secure.helpscout.net/some-url/logo.jpg"
+            }],
+            "tags": [
+                "tag1",
+                "tag2",
+                "tag3"
+            ]
+        }]
+    }
+Conversation Merged
+    Request Header:
+    X-Helpscout-Event: convo.merged
+    Request Payload:
+    {
+        "id": 76200894,
+        "folderId": 447335,
+        "type": "email",
+        "isDraft": false,
+        "number": 7,
+        "owner": null,
+        "mailbox": {
+            "id": 40724,
+            "name": "Support"
+        },
+        "customer": {
+            "id": 47925426,
+            "firstName": "Mano",
+            "lastName": "",
+            "email": "cvnoob1@gmail.com",
+            "type": "customer"
+        },
+        "threadCount": 2,
+        "status": "closed",
+        "subject": "hi",
+        "preview": "hi",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:41:07Z",
+        "modifiedAt": "2015-03-06T21:48:06Z",
+        "closedAt": "2015-03-06T21:44:59Z",
+        "closedBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [],
+        "threads": [
+            {
+                "id": 191395892,
+                "assignedTo": null,
+                "status": "nochange",
+                "createdAt": "2015-03-06T21:48:06Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": "merged",
+                "actionSourceId": 76200111,
+                "fromMailbox": null,
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191394601,
+                "assignedTo": null,
+                "status": "nochange",
+                "createdAt": "2015-03-06T21:45:17Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": "movedFromMailbox",
+                "actionSourceId": 40720,
+                "fromMailbox": {
+                    "id": 40720,
+                    "name": "support"
+                },
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191394369,
+                "assignedTo": null,
+                "status": "closed",
+                "createdAt": "2015-03-06T21:44:59Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47925426,
+                    "firstName": "Mano",
+                    "lastName": "",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "customer"
+                },
+                "body": "hi",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191392163,
+                "assignedTo": null,
+                "status": "closed",
+                "createdAt": "2015-03-06T21:41:07Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": "merged",
+                "actionSourceId": 76200111,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47925426,
+                    "firstName": "Mano",
+                    "lastName": "",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "customer"
+                },
+                "body": "fine.",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Moved
+    Request Header:
+    X-Helpscout-Event: convo.moved
+    Request Payload:
+    {
+        "id": 76200894,
+        "folderId": 447335,
+        "type": "email",
+        "isDraft": false,
+        "number": 7,
+        "owner": null,
+        "mailbox": {
+            "id": 40724,
+            "name": "Support"
+        },
+        "customer": {
+            "id": 47925426,
+            "firstName": "Mano",
+            "lastName": "",
+            "email": "cvnoob1@gmail.com",
+            "type": "customer"
+        },
+        "threadCount": 1,
+        "status": "closed",
+        "subject": "hi",
+        "preview": "hi",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:44:59Z",
+        "modifiedAt": "2015-03-06T21:45:17Z",
+        "closedAt": "2015-03-06T21:44:59Z",
+        "closedBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [],
+        "threads": [
+            {
+                "id": 191394601,
+                "assignedTo": null,
+                "status": "nochange",
+                "createdAt": "2015-03-06T21:45:17Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": "movedFromMailbox",
+                "actionSourceId": 40720,
+                "fromMailbox": {
+                    "id": 40720,
+                    "name": "support"
+                },
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191394369,
+                "assignedTo": null,
+                "status": "closed",
+                "createdAt": "2015-03-06T21:44:59Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47925426,
+                    "firstName": "Mano",
+                    "lastName": "",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "customer"
+                },
+                "body": "hi",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Agent Reply
+    Request Header:
+    X-Helpscout-Event: convo.agent.reply.created
+    Request Payload:
+    {
+        "id": 76193668,
+        "folderId": 447274,
+        "type": "email",
+        "isDraft": false,
+        "number": 4,
+        "owner": null,
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923812,
+            "firstName": "Korestaff",
+            "lastName": "",
+            "email": "manoj.katragadda@kore.com",
+            "type": "customer"
+        },
+        "threadCount": 2,
+        "status": "closed",
+        "subject": "Hi",
+        "preview": "Reply1",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:05:15Z",
+        "modifiedAt": "2015-03-06T21:31:38Z",
+        "closedAt": "2015-03-06T21:31:38Z",
+        "closedBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [
+            "tag1"
+        ],
+        "threads": [
+            {
+                "id": 191387932,
+                "assignedTo": null,
+                "status": "closed",
+                "createdAt": "2015-03-06T21:31:38Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Reply1",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191377449,
+                "assignedTo": null,
+                "status": "pending",
+                "createdAt": "2015-03-06T21:09:17Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191377039,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:08:28Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "note",
+                "state": "published",
+                "customer": null,
+                "body": "note1",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191375240,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:05:15Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Test mail",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Deleted
+    Request Header:
+    X-Helpscout-Event: convo.deleted
+    Request Payload:
+    {"id":76191359}
+Customer Created
+    Request Header:
+    X-Helpscout-Event: customer.created
+    Request Payload:
+    {
+        "id": 47923812,
+        "firstName": "Korestaff",
+        "lastName": "",
+        "photoUrl": null,
+        "photoType": null,
+        "gender": null,
+        "age": null,
+        "organization": null,
+        "jobTitle": null,
+        "location": null,
+        "createdAt": "2015-03-06T21:05:00Z",
+        "modifiedAt": "2015-03-06T21:05:00Z",
+        "address": null,
+        "background": null,
+        "socialProfiles": null,
+        "emails": [
+            {
+                "id": 57581780,
+                "value": "manoj.katragadda@kore.com",
+                "location": "work"
+            }
+        ],
+        "phones": null,
+        "chats": null,
+        "websites": null
+    }
+Conversation Created
+    Request Header:
+    X-Helpscout-Event: convo.created
+    Request Payload:
+    {
+        "id": 76193668,
+        "folderId": 447269,
+        "type": "email",
+        "isDraft": false,
+        "number": 4,
+        "owner": null,
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923812,
+            "firstName": "Korestaff",
+            "lastName": "",
+            "email": "manoj.katragadda@kore.com",
+            "type": "customer"
+        },
+        "threadCount": 1,
+        "status": "active",
+        "subject": "Hi",
+        "preview": "Test mail",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:05:15Z",
+        "modifiedAt": "2015-03-06T21:05:15Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [],
+        "threads": [
+            {
+                "id": 191375240,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:05:15Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Test mail",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Assigned
+    Request Header:
+    X-Helpscout-Event: convo.assigned
+    Request Payload:
+    {
+        "id": 76191359,
+        "folderId": 447275,
+        "type": "email",
+        "isDraft": false,
+        "number": 1,
+        "owner": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923178,
+            "firstName": "Help",
+            "lastName": "Scout",
+            "email": "help@helpscout.net",
+            "type": "customer"
+        },
+        "threadCount": 0,
+        "status": "active",
+        "subject": "Learning the basics",
+        "preview": "Hey cv,  Above this message is what we call the Conversation Toolbar. From there you can take all sorts of actions on a conversation: reply, add a note, assign to someone and more. Hover your mouse ov",
+        "createdBy": {
+            "id": 47923178,
+            "firstName": "Help",
+            "lastName": "Scout",
+            "email": "help@helpscout.net",
+            "type": "customer"
+        },
+        "createdAt": "2015-03-06T20:52:27Z",
+        "modifiedAt": "2015-03-06T21:06:48Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "web",
+            "via": "customer"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [
+            "samples"
+        ],
+        "threads": [
+            {
+                "id": 191376229,
+                "assignedTo": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "status": "nochange",
+                "createdAt": "2015-03-06T21:06:48Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191369381,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T20:52:27Z",
+                "createdBy": {
+                    "id": 47923178,
+                    "firstName": "Help",
+                    "lastName": "Scout",
+                    "email": "help@helpscout.net",
+                    "type": "customer"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "customer"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "customer",
+                "state": "published",
+                "customer": {
+                    "id": 47923178,
+                    "firstName": "Help",
+                    "lastName": "Scout",
+                    "email": "help@helpscout.net",
+                    "type": "customer"
+                },
+                "body": "Hey cv,<br><br>Above this message is what we call the <strong>Conversation Toolbar</strong>. From there you can take all sorts of actions on a conversation: reply, add a note, assign to someone and more. Hover your mouse over each of the icons to see all the things you can do.<br><br>Also note the subject line below the toolbar. You can click to edit it anytime. There's also a tag called \"samples\", which denote all the sample messages from us in your mailbox. Tags are a really great way to categorize all the emails you receive from customers.<br><br>How's your trial been going so far? If there's anything you need along the way, hit reply on this message to reach our support team.<br><br>Cheers,<br>Your friends at Help Scout",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191369380,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T20:52:27Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "note",
+                "state": "published",
+                "customer": null,
+                "body": "Notes are a great way to communicate with other Help Scout Users, because they are not visible to customers. It's quite common to add notes when you assign a conversation to someone on your team.",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191369379,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T20:52:27Z",
+                "createdBy": {
+                    "id": 47923178,
+                    "firstName": "Help",
+                    "lastName": "Scout",
+                    "email": "help@helpscout.net",
+                    "type": "customer"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "customer"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "customer",
+                "state": "published",
+                "customer": {
+                    "id": 47923178,
+                    "firstName": "Help",
+                    "lastName": "Scout",
+                    "email": "help@helpscout.net",
+                    "type": "customer"
+                },
+                "body": "Hey there, cv!<br><br>This is what a conversation thread from a customer looks like.<br><br>See that little arrow on the top right-hand side of this thread next to the timestamp? That's called the thread options menu. You can click it and access the original email source, edit/hide the thread, or start a new conversation with this thread.<br><br>On the right-hand side of the page is the <strong>Customer Sidebar</strong>. This will display everything you need to know about the customer, including contact information and conversation history.<br><br>Thanks for reading!<br><br>Cheers,<br>Your friends at Help Scout",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Note Created
+    Request Header:
+    X-Helpscout-Event: convo.note.created
+    Request Payload:
+    {
+        "id": 76193668,
+        "folderId": 447269,
+        "type": "email",
+        "isDraft": false,
+        "number": 4,
+        "owner": null,
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923812,
+            "firstName": "Korestaff",
+            "lastName": "",
+            "email": "manoj.katragadda@kore.com",
+            "type": "customer"
+        },
+        "threadCount": 1,
+        "status": "active",
+        "subject": "Hi",
+        "preview": "note1",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:05:15Z",
+        "modifiedAt": "2015-03-06T21:08:28Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [],
+        "threads": [
+            {
+                "id": 191377039,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:08:28Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "note",
+                "state": "published",
+                "customer": null,
+                "body": "note1",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191375240,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:05:15Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Test mail",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Status Updated
+    --> changed active to pending
+    Request Header:
+    X-Helpscout-Event: convo.status
+    Request Payload:
+    {
+        "id": 76193668,
+        "folderId": 447269,
+        "type": "email",
+        "isDraft": false,
+        "number": 4,
+        "owner": null,
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923812,
+            "firstName": "Korestaff",
+            "lastName": "",
+            "email": "manoj.katragadda@kore.com",
+            "type": "customer"
+        },
+        "threadCount": 1,
+        "status": "pending",
+        "subject": "Hi",
+        "preview": "note1",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:05:15Z",
+        "modifiedAt": "2015-03-06T21:09:17Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [],
+        "threads": [
+            {
+                "id": 191377449,
+                "assignedTo": null,
+                "status": "pending",
+                "createdAt": "2015-03-06T21:09:17Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191377039,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:08:28Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "note",
+                "state": "published",
+                "customer": null,
+                "body": "note1",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191375240,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:05:15Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Test mail",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }
+Conversation Tag Updated
+    Request Header:
+    X-Helpscout-Event: convo.tags
+    Request Payload:
+    {
+        "id": 76193668,
+        "folderId": 447269,
+        "type": "email",
+        "isDraft": false,
+        "number": 4,
+        "owner": null,
+        "mailbox": {
+            "id": 40720,
+            "name": "support"
+        },
+        "customer": {
+            "id": 47923812,
+            "firstName": "Korestaff",
+            "lastName": "",
+            "email": "manoj.katragadda@kore.com",
+            "type": "customer"
+        },
+        "threadCount": 1,
+        "status": "pending",
+        "subject": "Hi",
+        "preview": "note1",
+        "createdBy": {
+            "id": 64582,
+            "firstName": "cv",
+            "lastName": "noob",
+            "email": "cvnoob1@gmail.com",
+            "type": "user"
+        },
+        "createdAt": "2015-03-06T21:05:15Z",
+        "modifiedAt": "2015-03-06T21:09:17Z",
+        "closedAt": null,
+        "closedBy": null,
+        "source": {
+            "type": "web",
+            "via": "user"
+        },
+        "cc": null,
+        "bcc": null,
+        "tags": [
+            "tag1"
+        ],
+        "threads": [
+            {
+                "id": 191377449,
+                "assignedTo": null,
+                "status": "pending",
+                "createdAt": "2015-03-06T21:09:17Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "lineitem",
+                "state": null,
+                "customer": null,
+                "body": null,
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191377039,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:08:28Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "note",
+                "state": "published",
+                "customer": null,
+                "body": "note1",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            },
+            {
+                "id": 191375240,
+                "assignedTo": null,
+                "status": "active",
+                "createdAt": "2015-03-06T21:05:15Z",
+                "createdBy": {
+                    "id": 64582,
+                    "firstName": "cv",
+                    "lastName": "noob",
+                    "email": "cvnoob1@gmail.com",
+                    "type": "user"
+                },
+                "source": {
+                    "type": "web",
+                    "via": "user"
+                },
+                "actionType": null,
+                "actionSourceId": 0,
+                "fromMailbox": null,
+                "type": "message",
+                "state": "published",
+                "customer": {
+                    "id": 47923812,
+                    "firstName": "Korestaff",
+                    "lastName": "",
+                    "email": "manoj.katragadda@kore.com",
+                    "type": "customer"
+                },
+                "body": "Test mail",
+                "to": null,
+                "cc": null,
+                "bcc": null,
+                "attachments": null
+            }
+        ]
+    }

@@ -1,0 +1,189 @@
+Honeybadger
+    Exception monitoring with more context for Ruby apps, brought to you by developers
+
+Configuration in JS:
+    <script src="//js.honeybadger.io/v0.2/honeybadger.min.js" type="text/javascript"></script>
+    <script>
+        Honeybadger.configure({
+            api_key: '55ab51c14a75c5d114615c3936c40be2' // Public API key
+        });
+    </script>
+    
+    <script>
+        try {
+            var abcd = "string";
+            console.log(abcd);
+            JSON.parse(abcd);
+        } catch(e) {
+            Honeybadger.notify(e);
+        }
+    </script>
+    
+    Tried in builder.
+
+Configuring Webhook:
+    Create a project and in project settings, go to alerts&integrations
+    Configure webhook
+
+Uri's:
+    Error Page: https://app.honeybadger.io/projects/42463/faults/11380944
+    Comment: https://app.honeybadger.io/projects/42463/faults/11380944#notice-comments
+    Icon url: https://d3aei7d2k8qp8j.cloudfront.net/assets/landing/bolt-d7b8ff10c6842389ad071f4c865f827e.svg
+Events:
+    When a fault occurs
+    When a fault is assigned
+    When a fault is resolved
+    When a fault is unresolved
+    When a comment is made
+
+    // Treid testing with message.kore.com not working.
+    When project is deployed
+    When my sites go down
+    When my sites are back to normal
+
+Payloads:
+    When a fault occurs
+    {
+        "event": "occurred",
+        "message": "[test/test] SyntaxError - Unexpected token s",
+        "fault": {
+            "project_id": 42463,
+            "klass": "SyntaxError",
+            "component": null,
+            "action": null,
+            "environment": "production",
+            "resolved": false,
+            "ignored": false,
+            "created_at": "2015-02-25T08:17:12.915Z",
+            "comments_count": 0,
+            "message": "Unexpected token s",
+            "notices_count": 2,
+            "last_notice_at": "2015-02-25T08:18:03.057Z",
+            "tags": [],
+            "id": 11338976,
+            "assignee": null
+        }
+    }
+    
+    When a fault is assigned
+    {
+        "event": "assigned",
+        "message": "[test/production] SyntaxError assigned to cvnoob by cvnoob",
+        "actor": {
+            "email": "cvnoob1@gmail.com",
+            "name": "cvnoob"
+        },
+        "fault": {
+            "project_id": 42463,
+            "klass": "SyntaxError",
+            "component": null,
+            "action": null,
+            "environment": "production",
+            "resolved": true,
+            "ignored": false,
+            "created_at": "2015-02-25T08:17:12.915Z",
+            "comments_count": 2,
+            "message": "Unexpected token s",
+            "notices_count": 2,
+            "last_notice_at": "2015-02-25T08:18:03.057Z",
+            "tags": [],
+            "id": 11338976,
+            "assignee": "cvnoob1@gmail.com"
+        },
+        "assignee": {
+            "email": "cvnoob1@gmail.com",
+            "name": "cvnoob"
+        }
+    }
+    
+    When a fault is resolved
+    {
+        "event": "resolved",
+        "message": "[test/production] SyntaxError resolved by cvnoob",
+        "actor": {
+            "email": "cvnoob1@gmail.com",
+            "name": "cvnoob"
+        },
+        "fault": {
+            "project_id": 42463,
+            "klass": "SyntaxError",
+            "component": null,
+            "action": null,
+            "environment": "production",
+            "resolved": true,
+            "ignored": false,
+            "created_at": "2015-02-25T08:17:12.915Z",
+            "comments_count": 1,
+            "message": "Unexpected token s",
+            "notices_count": 2,
+            "last_notice_at": "2015-02-25T08:18:03.057Z",
+            "tags": [],
+            "id": 11338976,
+            "assignee": null
+        }
+    }
+    
+    When a fault is unresolved
+    {
+        "event": "unresolved",
+        "message": "[test/production] SyntaxError unresolved by cvnoob",
+        "actor": {
+            "email": "cvnoob1@gmail.com",
+            "name": "cvnoob"
+        },
+        "fault": {
+            "project_id": 42463,
+            "klass": "SyntaxError",
+            "component": null,
+            "action": null,
+            "environment": "production",
+            "resolved": false,
+            "ignored": false,
+            "created_at": "2015-02-25T08:17:12.915Z",
+            "comments_count": 3,
+            "message": "Unexpected token s",
+            "notices_count": 2,
+            "last_notice_at": "2015-02-25T08:18:03.057Z",
+            "tags": [],
+            "id": 11338976,
+            "assignee": "cvnoob1@gmail.com"
+        }
+    }
+    
+    When a comment is made
+    {
+        "event": "commented",
+        "message": "[test/production] cvnoob commented on SyntaxError: commenting now",
+        "actor": {
+            "email": "cvnoob1@gmail.com",
+            "name": "cvnoob"
+        },
+        "fault": {
+            "project_id": 42463,
+            "klass": "SyntaxError",
+            "component": null,
+            "action": null,
+            "environment": "production",
+            "resolved": false,
+            "ignored": false,
+            "created_at": "2015-02-25T08:17:12.915Z",
+            "comments_count": 4,
+            "message": "Unexpected token s",
+            "notices_count": 2,
+            "last_notice_at": "2015-02-25T08:18:03.057Z",
+            "tags": [],
+            "id": 11338976,
+            "assignee": "cvnoob1@gmail.com"
+        },
+        "comment": {
+            "id": 2765261,
+            "fault_id": 11338976,
+            "event": null,
+            "source": "web",
+            "notices_count": 1,
+            "created_at": "2015-02-25T09:06:54.153Z",
+            "email": null,
+            "author": "cvnoob",
+            "body": "commenting now"
+        }
+    }

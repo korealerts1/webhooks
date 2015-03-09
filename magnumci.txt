@@ -1,0 +1,65 @@
+KoreUxMapping:
+    use JSON.parse(payload).{{'property'}}
+MagnumCI
+    Try Magnum CI. Easy Integration. Add web hooks, deploy key and go wild with
+    customizing builds. Hook up any code provider: Github, Bitbucket, Gitlab.
+
+Setting up Triggers/Events:
+    Add a post-receive webhook to the github repo,
+    with the magnumci webhook url and ssh key to access github.
+    Make changes to your repo and push to trigger BUILD.
+
+Setting up Webhook:
+    Click on settings on right side of the top nav(project top nav)
+    Click on Webhooks on the left nav.
+    Provide webhook url and save.
+    Now click on test to get a test payload on the webhook.
+
+Events notified:
+    Build Status
+
+Payload:
+    Pass
+    {
+        "id": 128725,
+        "project_id": 2465,
+        "title": "[PASS] magnumci #3 (master - f4accbf0) by Manoj Babu",
+        "number": 3,
+        "commit": "f4accbf0d7d5bf48abdb1f2f9106eb12ad25611c",
+        "author": "Manoj Babu",
+        "committer": "Manoj Babu",
+        "message": "Magnumci: testing webhook",
+        "branch": "master",
+        "state": "finished",
+        "status": "pass",
+        "result": 0,
+        "duration": 8,
+        "duration_string": "8s",
+        "commit_url": "https://github.com/manoj2378/magnumci/commit/f4accbf0d7d5bf48abdb1f2f9106eb12ad25611c",
+        "compare_url": "https://github.com/manoj2378/magnumci/compare/f3f30f4b7329...f4accbf0d7d5",
+        "started_at": "2015-03-06T18:57:37-06:00",
+        "finished_at": "2015-03-06T18:57:45-06:00",
+        "build_url": "http://magnum-ci.com/projects/2465/builds/128725"
+    }
+    Fail
+    {
+        "id": 128709,
+        "project_id": 2465,
+        "title": "[FAIL] codeship #2 (master - f3f30f4b) by Manoj Babu",
+        "number": 2,
+        "commit": "f3f30f4b7329819da58267d84b173b8db083dda0",
+        "author": "Manoj Babu",
+        "committer": "Manoj Babu",
+        "message": "MagnumCI: replaced codeship with magnumci",
+        "branch": "master",
+        "state": "finished",
+        "status": "fail",
+        "result": 127,
+        "duration": 8,
+        "duration_string": "8s",
+        "commit_url": "https://github.com/manoj2378/magnumci/commit/f3f30f4b7329819da58267d84b173b8db083dda0",
+        "compare_url": "https://github.com/manoj2378/magnumci/compare/e7880a441020...f3f30f4b7329",
+        "started_at": "2015-03-06T17:52:13-06:00",
+        "finished_at": "2015-03-06T17:52:21-06:00",
+        "build_url": "http://magnum-ci.com/projects/2465/builds/128709"
+    }

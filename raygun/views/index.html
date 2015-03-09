@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Raygun</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#reportNewError').click(function(){
+                    $.post('/', {errorName: $("#newError").val()});
+                });
+                $('#reportError').click(function(){
+                    $.post('/', {errorName: 'Standard Error'});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Testing Raygun</p>
+        <p><button id="reportError">Report Standard Error</button></p>
+        <p><input id="newError"></p>
+        <p><button id="reportNewError">Report New Error</button></p>
+    </body>
+</html>

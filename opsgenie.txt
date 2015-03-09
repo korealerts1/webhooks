@@ -1,0 +1,199 @@
+OpsGenie
+    Take alerts from any IT management system and notify users via 
+    iPhone, Android, Blackberry push notifications, email, SMS and phone calls.
+
+Configuring Webhook:
+    Go to Integrations tab on Left Navigation Bar and choose webhook, give url
+
+http://message.kore.com/flow/alerts/n-ebe22253-8427-5ac0-be18-afc462192269
+<% case action
+   when "Create" %><%= New Alert has been created %>
+<% when "Acknowledge" %><%= Alert has been acked %>
+<% when "AddNote" %><%= Note has been added %>
+<% when "AddRecipient" %><%= Recipient has been added %>
+<% when "AssignOwnership" %><%= Alert has been assigned an owner %>
+<% when "Close" %><%= Alert has been closed %>
+<% when "Delete" %><%= Alert has been deleted%>
+<% end %>
+Events:
+    Create
+    Acknowledge
+    AddNote
+    AddRecipient
+    AssignOwnership
+    Close
+    Delete
+    -- for any alert incoming or the one created in opsgenie website.
+
+Payload:
+    Create
+    {
+        "source": {
+            "name": "web",
+            "type": "API"
+        },
+        "alert": {
+            "updatedAt": 1424860563686001400,
+            "tags": [],
+            "message": "check",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "source": "cvnoob1@gmail.com",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "tinyId": "3",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": ""
+        },
+        "action": "Create",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    Acknowledge
+    {
+        "source": {
+            "name": "",
+            "type": "web"
+        },
+        "alert": {
+            "updatedAt": 1424863598233001200,
+            "tags": [],
+            "message": "check",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "source": "cvnoob1@gmail.com",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "tinyId": "3",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": ""
+        },
+        "action": "Acknowledge",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    AssignOwnership
+    {
+        "source": {
+            "name": "",
+            "type": "web"
+        },
+        "alert": {
+            "updatedAt": 1424863669595001300,
+            "tags": [],
+            "message": "check",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "source": "cvnoob1@gmail.com",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "tinyId": "3",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": "",
+            "owner": "cvnoob1@gmail.com"
+        },
+        "action": "AssignOwnership",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    AddNote
+    // executed via opsgenie commandline tool,
+    // Command: note "sample note" to 1
+    {
+        "source": {
+            "name": "",
+            "type": "chat"
+        },
+        "alert": {
+            "updatedAt": 1424864397618001400,
+            "tags": [],
+            "message": "test alert",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "98ec822b-c12d-4ac2-bffb-5efbc85210e1",
+            "source": "cvnoob1@gmail.com",
+            "alias": "98ec822b-c12d-4ac2-bffb-5efbc85210e1",
+            "tinyId": "1",
+            "createdAt": 1424759902743,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": "",
+            "note": "\"sample note\""
+        },
+        "action": "AddNote",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    AddRecipient
+    {
+        "source": {
+            "name": "",
+            "type": "web"
+        },
+        "alert": {
+            "updatedAt": 1424863843767001000,
+            "tags": [],
+            "message": "check",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "source": "cvnoob1@gmail.com",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "tinyId": "3",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": "",
+            "recipient": "cvnoob1@gmail.com"
+        },
+        "action": "AddRecipient",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    Close
+    {
+        "source": {
+            "name": "",
+            "type": "web"
+        },
+        "alert": {
+            "updatedAt": 1424863946405001200,
+            "tags": [],
+            "message": "check",
+            "username": "cvnoob1@gmail.com",
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "source": "cvnoob1@gmail.com",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "tinyId": "3",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490",
+            "entity": ""
+        },
+        "action": "Close",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }
+
+    Delete
+    {
+        "source": {
+            "name": "",
+            "type": "web"
+        },
+        "alert": {
+            "tinyId": "3",
+            "alias": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "entity": "",
+            "message": "check",
+            "updatedAt": 1424863946405001200,
+            "alertId": "50d00097-90a0-46ea-9329-cad5150e494c",
+            "username": "cvnoob1@gmail.com",
+            "source": "cvnoob1@gmail.com",
+            "createdAt": 1424860563686,
+            "userId": "4041d2a0-f95f-4d9e-ba23-53048c59a490"
+        },
+        "action": "Delete",
+        "integrationId": "e2d92a5b-f8ec-4800-a982-62f2903f1417",
+        "integrationName": "Webhook"
+    }

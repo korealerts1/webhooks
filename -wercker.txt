@@ -1,0 +1,8 @@
+No webhook/webservice notification support.
+Slack has a mutual setup for notifications.
+http://blog.wercker.com/2013/11/27/Slack-Notifications.html
+
+Steps to build and deploy.
+http://devcenter.wercker.com/
+
+magnumci repo has the wercker.yml

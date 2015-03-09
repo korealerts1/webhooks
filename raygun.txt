@@ -1,0 +1,48 @@
+Raygun:
+    Raygun is a leading error tracking and crash reporting tool to help developers discover and resolve software bugs faster
+
+Setting up app:
+    Similar to bugsnag, just use raygun node module instead of bugsnag
+
+Configuring Webhook:
+    From dashboard go to Application settings -> integrations, provide webhook
+    url, and enable it.
+
+Events:
+    When an error occurs
+    Every time an error notification arrives from your app, this webhook will be
+    fired. The body of the POST is JSON, and the follow is an example payload:
+        {
+          "event":"error_notification",
+          "error": {
+            "url":"http://app.raygun.io/error-url",
+            "message":"",
+            "firstOccurredOn":"1970-01-28T01:49:36Z",
+            "lastOccurredOn":"1970-01-28T01:49:36Z",
+            "usersAffected":1,
+            "totalOccurrences":1
+          },
+          "application": {
+            "name":"application name",
+            "url":"http://app.raygun.io/application-url"
+          }
+        }
+    If you'd like to see a particular webhook for an event added, contact us or add a feature request from within Raygun.
+
+Paylaods:
+    App generated error, for Raygun.
+    {
+        "event": "error_notification",
+        "error": {
+            "url": "https://app.raygun.io/dashboard/bwf1ja/errors/719631790",
+            "message": "Bugsnag random error",
+            "firstOccurredOn": "2015-03-06T11:10:29.54Z",
+            "lastOccurredOn": "2015-03-06T11:10:29.54Z",
+            "usersAffected": 0,
+            "totalOccurrences": 1
+        },
+        "application": {
+            "name": "Koretest",
+            "url": "https://app.raygun.io/dashboard/bwf1ja"
+        }
+    }

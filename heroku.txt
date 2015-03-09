@@ -1,0 +1,29 @@
+Heroku
+    A platform as a service (PaaS) that enables developers to build and run applications entirely in the cloud.
+
+Setting up app:
+    https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+    install heroku-toolbelt
+    provide credentials
+    cd to project folder
+    run heroku create
+    make changes and push
+    app is deployed to see run heroku ps:scale web=1
+    to go to website run heroku open
+
+Settingup Webhook:
+    https://devcenter.heroku.com/articles/deploy-hooks#http-post-hook
+    --> Basic configuration done.. needs paid account.
+    To setup webhook:
+        heroku addons:add deployhooks:http \
+            --url=http://example.org
+        Adding deployhooks:http to myapp...Done.
+    Help text:
+        The parameters are POSTed to your url with a mime type of application/x-www-form-urlencoded.
+        The parameters included in the request are the same as the variables available in the hook message: app, user, url, head, head_long, git_log and release. See below for their descriptions.
+
+Events:
+    When a build happens.
+
+Example Payload:
+    app=secure-woodland-9775&user=example%40example.com&url=http%3A%2F%2Fsecure-woodland-9775.herokuapp.com&head=4f20bdd&head_long=4f20bdd&prev_head=&git_log=%20%20*%20Michael%20Friis%3A%20add%20bar&release=v7

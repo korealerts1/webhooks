@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Honeybadger</title>
+        <script>
+            var initAppEnlight = function () {
+              if(this.readyState!='loading'){
+                  AppEnlight.init({
+                      apiKey:'6f4e7f5a250545418de44b1b2ad0b3e9',
+                      windowOnError: 1 // enable to hook to window.onerror
+                  });
+              }
+            };
+            //  load the script asynchroneously
+            var scrElem = document.createElement('script');
+            scrElem.type = 'text/javascript';
+            scrElem.async = true;
+            scrElem.onload = scrElem.onreadystatechange = initAppEnlight;
+            scrElem.src = "//cdn.jsdelivr.net/appenlight/0.2.0/appenlight-client.min.js";
+            var p = document.getElementsByTagName('script')[0];
+            p.parentNode.insertBefore(scrElem, p);
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                function MyError(name) {
+                  this.name = name;
+                  this.message = 'AppEnlight random error';
+                }
+                MyError.prototype = Object.create(Error.prototype);
+                MyError.prototype.constructor = MyError;
+                function reportError(){
+                    try {
+                        var abcd = "manoj";
+                        console.log(abcd);
+                        JSON.parse(abcd);
+                    } catch(e) {
+                        AppEnlight.grabError(e)
+                    }
+                }
+                $('button').click(function(){
+                    try {
+                        AppEnlight.log('error',"some test message");
+                        console.log('log1');
+                        AppEnlight.log('info',"some info message");
+                        console.log('log2');
+                        AppEnlight.log('warning',"some warn message");
+                        console.log('log3');
+                        throw new MyError($("#throwError").val());
+                    } catch (e) {
+                        console.log('here');
+                        AppEnlight.grabError(e)
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Testing Honeybadger</p>
+        <p><input id="throwError"></p>
+        <p><button>Report New Error</button></p>
+    </body>
+</html>

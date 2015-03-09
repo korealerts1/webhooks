@@ -1,0 +1,33 @@
+--->Gemini 
+    --> check for webservice
+    Countersoft's Gemini is a suite of tools for agile software teams.
+    3/9/2015
+    http://docs.countersoft.com/using-slack/
+    should talk to gemini
+--->Codeship
+    Continous deployment.
+    3/4/2015
+    --> integrated heroku
+--->Gemini
+    Project Management.
+    3/9/2015
+    http://docs.countersoft.com/using-slack/
+    should talk to gemini
+Trello
+    Project Management
+    3/11/2015
+--->Cloud66
+    Continous Integration
+    3/12/2015
+    Requires amazon aws credentials
+Datadog
+    Monitoring
+    3/13/2015
+--->DeployHQ
+    Deployment
+    3/19/2015
+    --> Basic configuration done.. needs AWS credentials.
+--->Heroku
+    Deployment
+    3/20/2015
+    --> Basic configuration done.. needs paid account.

@@ -1,0 +1,18 @@
+Sanp CI
+    Snap monitors your repository on GitHub for any new branches that get
+    created and automatically builds and tests them as soon as they get created.
+Setting up app:
+    Login though your github acc and add project repository to deploy.
+Configuring Webhook:
+    From the dashboard, go to the project notification settings, (icon found on
+    the right side of the project div.)
+    Provide your webhook url.
+Events:
+    Build Status
+Payload:
+    {
+        "project_name": "manoj2378/codeship (master)",
+        "stage_name": "EditMe",
+        "counter": 2,
+        "build_result": "passed"
+    }

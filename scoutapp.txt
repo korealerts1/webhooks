@@ -1,0 +1,36 @@
+Scout:
+    The easier way to monitor servers and web applications. Monitor server load, watch for slow web requests, graph internal application data and much more.
+
+Setting up server:
+    Must have ruby 1.9 or more
+    sudo gem install scout
+    scout install [APIKey]
+    Follow instructions on the console output of scout install
+
+Configuring Webhook:
+    Scout posts data to webhook when user defined triggers on the metrics of the
+    server generates alert.
+
+Events:
+    User defined triggers generates alerts and the alert data is posted to
+    webhook
+
+Payload:
+    {
+        "time": "2015-03-06T19:31:31.000Z",
+        "id": 760561471,
+        "metric_name": "used",
+        "metric_value": 2290,
+        "plugin_name": null,
+        "server_name": "ubuntu",
+        "server_hostname": "ubuntu",
+        "title": "Memory Used met or exceeded 2,100 MB, increasing to 2,290 MB at 07:30PM",
+        "body": null,
+        "lifecycle": "start",
+        "type": "alert",
+        "severity": "not applicable",
+        "url": "https://scoutapp.com/a/760561471",
+        "sparkline_url": "https://scoutapp.com/kroe/alerts/760561471/sparkline.png",
+        "trigger": "when Memory Used meets or exceeds 2,100 MB",
+        "trigger_id": 20782681
+    }
