@@ -15,7 +15,7 @@ app.post('/', function(req, res){
     var errorName = req.body.errorName;
     function SridharNew(message) {
       this.name = message||'Error';
-      this.message = 'Bugsnag random error';
+      this.message = 'Raygun random error';
     }
     SridharNew.prototype = Object.create(Error.prototype);
     SridharNew.prototype.constructor = SridharNew;

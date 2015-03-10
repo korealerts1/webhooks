@@ -1,0 +1,42 @@
+Kiln
+    Kiln is a hosted version control service
+Setting up Triggers/events:
+    Initiate a repo in kiln.
+Configuring Webhook:
+    Click on Account configuration on the right side of top nav.
+    In the dropdown choose webhooks, select custom webhook and provide kore
+    webhook url.
+Events:
+    When a push is made to the repository.
+Kore Instructions while setup:
+    https://www.flowdock.com/help/kiln
+Payload:
+{
+    "pusher": {
+        "fullName": "cvnoob",
+        "email": "cvnoob1@gmail.com",
+        "accesstoken": false
+    },
+    "repository": {
+        "url": "https://kroe.kilnhg.com/Code/Repositories/Group/KilnWebhookTest",
+        "name": "KilnWebhookTest",
+        "description": "",
+        "central": true,
+        "id": 395447
+    },
+    "commits": [
+        {
+            "id": "fd64c1df5b78377b09f5f0e24cc72f10edf501b5",
+            "revision": 0,
+            "url": "https://kroe.kilnhg.com/Code/Repositories/Group/KilnWebhookTest/History/fd64c1df5b78",
+            "message": "initial commit\n",
+            "timestamp": "2015-03-10T07:01:41Z",
+            "author": "Manoj Babu <manoj.babu2378@gmail.com>",
+            "branch": "default",
+            "tags": [
+                "master"
+            ]
+        }
+    ],
+    "timestamp": "2015-03-10T07:02:57Z"
+}

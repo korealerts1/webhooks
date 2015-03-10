@@ -10,6 +10,8 @@ Setting up app:
     make changes and push
     app is deployed to see run heroku ps:scale web=1
     to go to website run heroku open
+    Reminder -- working heroku app on my local system is located at
+                node-js-getting-started
 
 Settingup Webhook:
     https://devcenter.heroku.com/articles/deploy-hooks#http-post-hook

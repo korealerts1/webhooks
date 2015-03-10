@@ -1,0 +1,72 @@
+{
+    "identifier": "0a89f545-6b73-6f6e-b720-8be6f12b088f",
+    "servers": [
+        {
+            "identifier": "4cb17b29-7ea7-824b-17ed-db1a9b376692",
+            "name": "message",
+            "protocol_type": "s3",
+            "server_path": "deployhq",
+            "auto_deploy_url": "https://cvnoob.deployhq.com/deploy/deployhq/to/message/kcedawsrobm9",
+            "last_revision": "6b283e15dc0555a6fe3362db7eb6e42541955616",
+            "preferred_branch": "master",
+            "notify_email": false,
+            "server_group_identifier": null,
+            "bucket_name": "alertsnotification",
+            "access_key_id": "AKIAJSBORYCKRNQOBGKA"
+        }
+    ],
+    "project": {
+        "name": "deployhq",
+        "permalink": "deployhq",
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwY4RhtVAxGg9n7Lr7r3EYmuCtII6xCmt3sbTCWpytcWiPedvb/4QA6haYF7pzmNDG06UuRNFnlGK9ZW+XK6WI1vHpXD9oMJC0v0cdlddy5RNighID0/XzWU8NAkwYPvZlzfwgZQsByN7rYdqmgWVRTxyccNfTsftTTixpQ2nmwQsAB/8FWxVINpj4rJG4YjyRFXOG/GHIvCVO+dWuzZnUt2qILP6dWjyXveKa4Q61DokzClHNjHojLANDIKUU0RAsrHb4Mps6OF7uganH8iKIWjBR6t7HwHF5f2yKeoM4WDucnX664pfl5skTIYU3IU2Sxr0R/JYjSSnf137cDzjpw== DeployHQ.com Key for deployhq",
+        "repository": {
+            "scm_type": "git",
+            "url": "git://github.com/manoj2378/codeship.git",
+            "port": null,
+            "username": null,
+            "branch": "master",
+            "cached": true,
+            "hosting_service": {
+                "name": "GitHub",
+                "url": "http://github.com",
+                "tree_url": "https://github.com/manoj2378/codeship/tree/master",
+                "commits_url": "https://github.com/manoj2378/codeship/commits/master"
+            }
+        }
+    },
+    "deployer": "cv noob",
+    "start_revision": {
+        "ref": "6b283e15dc0555a6fe3362db7eb6e42541955616",
+        "author": "Manoj Babu",
+        "email": "manoj.katragadda@kore.com",
+        "timestamp": "2015-03-08T13:23:24+00:00",
+        "message": "Snap-CI: Build check\n\n"
+    },
+    "end_revision": {
+        "ref": "6b283e15dc0555a6fe3362db7eb6e42541955616",
+        "author": "Manoj Babu",
+        "email": "manoj.katragadda@kore.com",
+        "timestamp": "2015-03-08T13:23:24+00:00",
+        "message": "Snap-CI: Build check\n\n"
+    },
+    "status": "completed",
+    "timestamps": {
+        "queued_at": "2015-03-09T10:21:14Z",
+        "started_at": "2015-03-09T10:21:15Z",
+        "completed_at": "2015-03-09T10:21:18Z",
+        "duration": null
+    },
+    "files": {
+        "4cb17b29-7ea7-824b-17ed-db1a9b376692": {
+            "changed": [],
+            "removed": []
+        }
+    },
+    "configuration": {
+        "copy_config_files": true,
+        "email_notify": false,
+        "notification_addresses": [
+            "cvnoob1@gmail.com"
+        ]
+    }
+}
