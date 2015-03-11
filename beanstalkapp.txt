@@ -1,0 +1,318 @@
+push – On each push.
+deploy – Every time a deployment is finished.
+comment – Any comment is posted on a changeset, a file or a code review.
+create_branch – When a branch is created.
+delete_branch – When a branch is deleted.
+create_tag – When a tag is created.
+delete_tag – When a tag is deleted.
+request_code_review – When a Code Review is requested for a branch.
+approve_code_review – When a Code Review is approved.
+cancel_code_review – When a Code Review is cancelled.
+reopen_code_review – When a cancelled or approved Code Review is reopened.
+
+Push:
+{
+  "trigger": "push",
+  "payload": {
+    "before": "eb49f9a56e284743c5bcecf70490d74a3d91aff1",
+    "after": "a654d65524e8826594aa677c649ed4d9e8764094",
+    "type": "GitPush",
+    "branch": "master",
+    "ref": "refs/heads/master",
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "beanstalk_user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "commits": [
+      {
+        "type": "GitCommit",
+        "id": "a654d655",
+        "message": "beanstalkapp: testing push event",
+        "branch": "master",
+        "author": {
+          "name": "Manoj Babu",
+          "email": "manoj.babu2378@gmail.com"
+        },
+        "beanstalk_user": null,
+        "changed_files": {
+          "added": [
+
+          ],
+          "deleted": [
+
+          ],
+          "modified": [
+            "readme"
+          ],
+          "copied": [
+
+          ]
+        },
+        "changeset_url": "https://kroe.beanstalkapp.com/beanstalkapp/changesets/a654d655",
+        "committed_at": "2015-03-10 19:46:02 UTC",
+        "parents": [
+          "eb49f9a56e284743c5bcecf70490d74a3d91aff1"
+        ]
+      }
+    ]
+  }
+}
+Deployment succes:
+{
+  "trigger": "deploy",
+  "payload": {
+    "type": "Deployment",
+    "id": 33695642,
+    "state": "success",
+    "deployed_at": "2015-03-10 19:53:34 UTC",
+    "comment": "beanstalkapp: testing push event",
+    "deploy_from_scratch": false,
+    "retries": 0,
+    "revision": "a654d65524e8826594aa677c649ed4d9e8764094",
+    "user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "environment": {
+      "type": "DeploymentEnvironment",
+      "id": 281742,
+      "name": "message",
+      "branch": "master",
+      "automatic": false,
+      "servers": [
+        {
+          "type": "Server",
+          "id": 299894,
+          "name": "message",
+          "protocol": "s3",
+          "remote_path": "/beanstalk",
+          "repository_path": "/"
+        }
+      ]
+    },
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    }
+  }
+}
+Deploy setup hooks:
+
+Pre-deploy hook sent per each commit getting deployed:
+second commit:
+{"source":"beanstalkapp","comment":"beanstalkapp: testing push event","author":"cvnoob","author_name":"cv noob","author_email":"cvnoob1@gmail.com","deployed_at":null,"revision":"a654d65524e8826594aa677c649ed4d9e8764094","repository":"beanstalkapp","environment":"message","server":"message","repository_url":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git","repository_url_https":"https://kroe.git.beanstalkapp.com/beanstalkapp.git","repository_url_ssh":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git"}
+first commit:
+{"source":"beanstalkapp","comment":"WebHook Test","author":"cvnoob","author_name":"cv noob","author_email":"cvnoob1@gmail.com","deployed_at":"2015/03/10 20:00:45 +0000","revision":1,"repository":"beanstalkapp","environment":"message","server":"message","repository_url":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git","repository_url_https":"https://kroe.git.beanstalkapp.com/beanstalkapp.git","repository_url_ssh":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git"}
+
+Post-deploy hook sent per each commit getting deployed:
+Headers: appl/url-encoded but json body
+second commit:
+{"source":"beanstalkapp","comment":"beanstalkapp: testing push event","author":"cvnoob","author_name":"cv noob","author_email":"cvnoob1@gmail.com","deployed_at":"2015/03/10 20:01:04 +0000","revision":"a654d65524e8826594aa677c649ed4d9e8764094","repository":"beanstalkapp","environment":"message","server":"message","repository_url":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git","repository_url_https":"https://kroe.git.beanstalkapp.com/beanstalkapp.git","repository_url_ssh":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git"}
+first commit:
+{"source":"beanstalkapp","comment":"WebHook Test","author":"cvnoob","author_name":"cv noob","author_email":"cvnoob1@gmail.com","deployed_at":"2015/03/10 20:00:46 +0000","revision":1,"repository":"beanstalkapp","environment":"message","server":"message","repository_url":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git","repository_url_https":"https://kroe.git.beanstalkapp.com/beanstalkapp.git","repository_url_ssh":"git@kroe.git.beanstalkapp.com:/beanstalkapp.git"}
+
+
+Comment:
+{
+  "trigger": "comment",
+  "payload": {
+    "type": "Comment",
+    "id": 168842,
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "author": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "origin": {
+      "type": "Changeset",
+      "revision": "a654d65524e8826594aa677c649ed4d9e8764094",
+      "file_path": null,
+      "line_num_left": null,
+      "line_num_right": null
+    },
+    "body": "first comment",
+    "rendered_body": "<p>first comment</p>\n",
+    "created_at": "2015-03-10 20:05:31 UTC"
+  }
+}
+Create Branch:
+{
+  "trigger": "create_branch",
+  "payload": {
+    "type": "GitBranch",
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "path": "refs/heads/beanstalk",
+    "name": "beanstalk"
+  }
+}
+
+request_code_review – When a Code Review is requested for a branch.
+{
+  "trigger": "request_code_review",
+  "payload": {
+    "type": "CodeReviewEvent",
+    "id": 137593,
+    "event": "create",
+    "created_at": "2015-03-10 20:09:15 UTC",
+    "user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "code_review": {
+      "type": "CodeReview",
+      "id": 11846,
+      "source_branch": "master",
+      "target_branch": "beanstalk",
+      "description": "dev",
+      "state": "new"
+    }
+  }
+}
+
+approve_code_review – When a Code Review is approved.
+{
+  "trigger": "approve_code_review",
+  "payload": {
+    "type": "CodeReviewEvent",
+    "id": 137594,
+    "event": "approve",
+    "created_at": "2015-03-10 20:09:59 UTC",
+    "user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "code_review": {
+      "type": "CodeReview",
+      "id": 11846,
+      "source_branch": "master",
+      "target_branch": "beanstalk",
+      "description": "dev",
+      "state": "approved"
+    }
+  }
+}
+
+reopen_code_review – When a cancelled or approved Code Review is reopened.
+{
+  "trigger": "reopen_code_review",
+  "payload": {
+    "type": "CodeReviewEvent",
+    "id": 137597,
+    "event": "reopen",
+    "created_at": "2015-03-10 20:11:09 UTC",
+    "user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "code_review": {
+      "type": "CodeReview",
+      "id": 11846,
+      "source_branch": "master",
+      "target_branch": "beanstalk",
+      "description": "dev",
+      "state": "reopened"
+    }
+  }
+}
+
+cancel_code_review – When a Code Review is cancelled.
+{
+  "trigger": "cancel_code_review",
+  "payload": {
+    "type": "CodeReviewEvent",
+    "id": 137603,
+    "event": "cancel",
+    "created_at": "2015-03-10 20:12:13 UTC",
+    "user": {
+      "type": "Owner",
+      "id": 428253,
+      "login": "cvnoob",
+      "email": "cvnoob1@gmail.com",
+      "name": "cv noob"
+    },
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "code_review": {
+      "type": "CodeReview",
+      "id": 11846,
+      "source_branch": "master",
+      "target_branch": "beanstalk",
+      "description": "dev",
+      "state": "cancelled"
+    }
+  }
+}
+
+delete_branch – When a branch is deleted.
+{
+  "trigger": "delete_branch",
+  "payload": {
+    "type": "GitBranch",
+    "repository": {
+      "id": 617148,
+      "name": "beanstalkapp",
+      "title": "beanstalkapp",
+      "type": "GitRepository"
+    },
+    "path": "refs/heads/beanstalk",
+    "name": "beanstalk"
+  }
+}

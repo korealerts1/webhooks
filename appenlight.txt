@@ -1,0 +1,8 @@
+{
+    "resource_name": "Koretestapp",
+    "event_time": "2015-03-10T11:40:03.329937",
+    "resource_id": 1884,
+    "reports": 1,
+    "alert_name": "error_report_alert",
+    "alert_action": "OPEN"
+}

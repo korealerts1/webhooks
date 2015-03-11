@@ -1,9 +1,9 @@
 Status:
     Worked with postman.
+    Handle incoming post req, is going wrong somewhere.
 Appsignal
     Your Ruby apps can run smoother. Monitoring for Rails, Sinatra and Grape.
     Support for Sidekiq, Delayed job & Resque
-
 Setting up ruby app
     install ruby REF: https://gorails.com/setup/ubuntu/14.10
         cd
@@ -40,6 +40,10 @@ Configuring Webhook:
     Choose webhook.
     Provide the webhook url and save webhook.
 Events:
+    To send Deploy notifications:
+        export APPSIGNAL_PUSH_API_KEY=4c2af484-691e-4316-bc7e-edfcdd06df1f
+        appsignal notify_of_deploy --revision 1 --user manoj --environment development --name RubyApp
+
     The webhook configured is common for all the events.
     It notifies 3 events.
     -> New Marker Event
