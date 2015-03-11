@@ -1,0 +1,126 @@
+New Branch
+---------------------
+{
+    "repository": {
+        "website": "",
+        "fork": false,
+        "name": "slackRep",
+        "scm": "git",
+        "owner": "korealerts",
+        "absolute_url": "/korealerts/slackrep/",
+        "slug": "slackrep",
+        "is_private": false
+    },
+    "truncated": false,
+    "commits": [],
+    "canon_url": "https://bitbucket.org",
+    "user": "korealerts"
+}
+
+New Commit
+---------------------------------
+
+{
+    "repository": {
+        "website": "",
+        "fork": false,
+        "name": "slackRep",
+        "scm": "git",
+        "owner": "korealerts",
+        "absolute_url": "/korealerts/slackrep/",
+        "slug": "slackrep",
+        "is_private": false
+    },
+    "truncated": false,
+    "commits": [
+        {
+            "node": "07d476558263",
+            "files": [
+                {
+                    "type": "added",
+                    "file": "update.yml"
+                }
+            ],
+            "raw_author": "korealerts <korealerts>",
+            "utctimestamp": "2015-03-11 17:49:05+00:00",
+            "author": "korealerts",
+            "timestamp": "2015-03-11 18:49:05",
+            "raw_node": "07d476558263bd9fec39245b0ba9b817277e8714",
+            "parents": [
+                "b1bf5f83f6e0"
+            ],
+            "branch": "korealerts/updateyml-created-online-with-bitbucket-1426096148337",
+            "message": "update.yml created online with Bitbucket",
+            "revision": null,
+            "size": -1
+        }
+    ],
+    "canon_url": "https://bitbucket.org",
+    "user": "korealerts"
+}
+
+
+-------------------------------------------------------------------------------
+Merge
+
+{
+    "repository": {
+        "website": "",
+        "fork": false,
+        "name": "slackRep",
+        "scm": "git",
+        "owner": "korealerts",
+        "absolute_url": "/korealerts/slackrep/",
+        "slug": "slackrep",
+        "is_private": false
+    },
+    "truncated": false,
+    "commits": [
+        {
+            "node": "07d476558263",
+            "files": [
+                {
+                    "type": "added",
+                    "file": "update.yml"
+                }
+            ],
+            "branches": [],
+            "raw_author": "korealerts <korealerts>",
+            "utctimestamp": "2015-03-11 17:49:05+00:00",
+            "author": "korealerts",
+            "timestamp": "2015-03-11 18:49:05",
+            "raw_node": "07d476558263bd9fec39245b0ba9b817277e8714",
+            "parents": [
+                "b1bf5f83f6e0"
+            ],
+            "branch": null,
+            "message": "update.yml created online with Bitbucket",
+            "revision": null,
+            "size": -1
+        },
+        {
+            "node": "a2cce91ff5ce",
+            "files": [
+                {
+                    "type": "added",
+                    "file": "update.yml"
+                }
+            ],
+            "raw_author": "korealerts <korealerts>",
+            "utctimestamp": "2015-03-11 17:50:38+00:00",
+            "author": "korealerts",
+            "timestamp": "2015-03-11 18:50:38",
+            "raw_node": "a2cce91ff5ceb1d3e52687749d4f530af9ea9ab7",
+            "parents": [
+                "b1bf5f83f6e0",
+                "07d476558263"
+            ],
+            "branch": "mynewbranch",
+            "message": "Merged in korealerts/updateyml-created-online-with-bitbucket-1426096148337 (pull request #2)\r\n\r\nupdate.yml created online with Bitbucket",
+            "revision": null,
+            "size": -1
+        }
+    ],
+    "canon_url": "https://bitbucket.org",
+    "user": "korealerts"
+}
