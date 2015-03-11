@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "~4.9.0",
     "jade": "~1.6.0",
-    "ejs": "~2.3.1"
+    "ejs": "~2.3.1",
+    "restify": "~3.0.0"
   }
 }

@@ -15,7 +15,7 @@
             scrElem.type = 'text/javascript';
             scrElem.async = true;
             scrElem.onload = scrElem.onreadystatechange = initAppEnlight;
-            scrElem.src = "//cdn.jsdelivr.net/appenlight/0.2.0/appenlight-client.min.js";
+            scrElem.src = "http://localhost:8010/appenlight.min.js";
             var p = document.getElementsByTagName('script')[0];
             p.parentNode.insertBefore(scrElem, p);
         </script>
