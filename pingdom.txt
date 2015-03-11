@@ -1,0 +1,5 @@
+Events:
+    All events will be notified with the following keys, and values being event
+    specific data.
+Payload:
+message: {"check": "1534278", "checkname": "Example", "host": "kore-koresftest.cs14.force.com", "action": "assign", "incidentid": 2, "description": "down"}

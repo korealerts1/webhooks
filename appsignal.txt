@@ -67,6 +67,7 @@ Payloads:
         }
     Sample Payloads provided.
     Marker Event:
+    {
         "marker":{
           "user": "thijs",
           "site": "AppSignal",
@@ -75,6 +76,7 @@ Payloads:
           "repository": "git@github.com:appsignal/appsignal.git",
           "url": "https://appsignal.com/test/sites/1385f7e38c5ce90000000000/web/exceptions"
         }
+    }
     Exception Event:
         "exception":{
           "exception": "ActionView::Template::Error",

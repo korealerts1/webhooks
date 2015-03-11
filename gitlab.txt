@@ -1,3 +1,9 @@
+Koreuxmapping:
+title:
+<% if(typeof object_kind!==\"undefined\"){ if (object_kind===\"issue\"){var title=\"Issue <a href=\"+object_attributes.url+\">\"+ object_attributes.title+\"</a> \" + object_attributes.state + \" by \" + user.name +\" at \" + new Date(object_attributes.created_at).toString()} }  %><% if(typeof object_kind!==\"undefined\"){ if (object_kind===\"merge_request\"){var title= object_attributes.title+ \": \"+user.name+\" requested to merge \"+ object_attributes.source_branch + \" into \" + object_attributes.target_branch + \" at \" + new Date(object_attributes.created_at).toString() }} %><% if((typeof ref !== \"undefined\") && (ref.indexOf(\"heads\") >0)){ var title= commits[0].author.name + \" pushed to <a href=\"+repository.homepage+\">\" + repository.name +\"</a> (\" +ref+ \")\" } %><%=title%>
+body:
+<% if(typeof object_kind!==\"undefined\"){ if (object_kind===\"issue\") {var body= \"Issue description: \" + object_attributes.description;}} %><% if((typeof ref !== \"undefined\") && (ref.indexOf(\"heads\") >0)){ var body= \"Total Commits Pushed: \"+ total_commits_count + \"<br>\" + \"Last Committed (<a href=\" +commits[0].url+\">\"+commits[0].id.slice(0,6)+\"</a>) by \"+ commits[0].author.name + \" at \"+ new Date(commits[0].timestamp).toString(); } %><% if(typeof object_kind!==\"undefined\"){ if (object_kind===\"merge_request\") var body= \"Merge request description: \" + object_attributes.description + \"<br>\" + \"Merge status: \" + object_attributes.merge_status + \"<br>\" + \"Merge State: \"+ object_attributes.state + \"<br>\" + \"Last commit(<a href=\"+object_attributes.last_commit.url+\">\"+object_attributes.last_commit.id.slice(0,6)+\"</a>) was made by \" + object_attributes.last_commit.author.name + \" at \" + new Date(object_attributes.last_commit.timestamp).toString() + \" with commit message \"+ object_attributes.last_commit.message} %><%=body%>
+
 TagEvents:
 {
   "ref": "refs/tags/v1.0.0",
@@ -19,17 +25,198 @@ TagEvents:
   "total_commits_count": 0
 }
 
-Merge Request:
-{"object_kind":"merge_request","user":{"name":"noob","username":"cvnoob","avatar_url":"https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40\u0026d=identicon"},"object_attributes":{"id":59175,"target_branch":"master","source_branch":"gitlab","source_project_id":188295,"author_id":109710,"assignee_id":109710,"title":"Gitlab","created_at":"2015-03-10 19:12:23 UTC","updated_at":"2015-03-10 19:12:23 UTC","milestone_id":null,"state":"opened","merge_status":"unchecked","target_project_id":188295,"iid":1,"description":"example","position":0,"locked_at":null,"source":{"name":"codeship","ssh_url":"git@gitlab.com:manoj2378/codeship.git","http_url":"https://gitlab.com/manoj2378/codeship.git","namespace":"manoj2378","visibility_level":20},"target":{"name":"codeship","ssh_url":"git@gitlab.com:manoj2378/codeship.git","http_url":"https://gitlab.com/manoj2378/codeship.git","namespace":"manoj2378","visibility_level":20},"last_commit":{"id":"c96ce97e5fb737354b1dbd375b6161716151afe5","message":"gitlab: testing webhook for merge requests\n","timestamp":"2015-03-10T19:11:04+00:00","url":"https://gitlab.com/manoj2378/codeship/commit/c96ce97e5fb737354b1dbd375b6161716151afe5","author":{"name":"Manoj Babu","email":"manoj.katragadda@kore.com"}},"url":null,"action":"open"}}
 
+Merge Request:
+{
+    "object_kind": "merge_request",
+    "user": {
+        "name": "noob",
+        "username": "cvnoob",
+        "avatar_url": "https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40&d=identicon"
+    },
+    "object_attributes": {
+        "id": 59175,
+        "target_branch": "master",
+        "source_branch": "gitlab",
+        "source_project_id": 188295,
+        "author_id": 109710,
+        "assignee_id": 109710,
+        "title": "Gitlab",
+        "created_at": "2015-03-10 19:12:23 UTC",
+        "updated_at": "2015-03-10 19:12:23 UTC",
+        "milestone_id": null,
+        "state": "opened",
+        "merge_status": "unchecked",
+        "target_project_id": 188295,
+        "iid": 1,
+        "description": "example",
+        "position": 0,
+        "locked_at": null,
+        "source": {
+            "name": "codeship",
+            "ssh_url": "git@gitlab.com:manoj2378/codeship.git",
+            "http_url": "https://gitlab.com/manoj2378/codeship.git",
+            "namespace": "manoj2378",
+            "visibility_level": 20
+        },
+        "target": {
+            "name": "codeship",
+            "ssh_url": "git@gitlab.com:manoj2378/codeship.git",
+            "http_url": "https://gitlab.com/manoj2378/codeship.git",
+            "namespace": "manoj2378",
+            "visibility_level": 20
+        },
+        "last_commit": {
+            "id": "c96ce97e5fb737354b1dbd375b6161716151afe5",
+            "message": "gitlab: testing webhook for merge requests\n",
+            "timestamp": "2015-03-10T19:11:04+00:00",
+            "url": "https://gitlab.com/manoj2378/codeship/commit/c96ce97e5fb737354b1dbd375b6161716151afe5",
+            "author": {
+                "name": "Manoj Babu",
+                "email": "manoj.katragadda@kore.com"
+            }
+        },
+        "url": null,
+        "action": "open"
+    }
+}
 Issue Closed
-{"object_kind":"issue","user":{"name":"noob","username":"cvnoob","avatar_url":"https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40\u0026d=identicon"},"object_attributes":{"id":158706,"title":"test","assignee_id":109710,"author_id":109710,"project_id":188295,"created_at":"2015-03-10 19:07:04 UTC","updated_at":"2015-03-10 19:07:49 UTC","position":0,"branch_name":null,"description":"test issue","milestone_id":null,"state":"closed","iid":1,"url":"https://gitlab.com/manoj2378/codeship/issues/1","action":"close"}}
+{
+    "object_kind": "issue",
+    "user": {
+        "name": "noob",
+        "username": "cvnoob",
+        "avatar_url": "https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40&d=identicon"
+    },
+    "object_attributes": {
+        "id": 158706,
+        "title": "test",
+        "assignee_id": 109710,
+        "author_id": 109710,
+        "project_id": 188295,
+        "created_at": "2015-03-10 19:07:04 UTC",
+        "updated_at": "2015-03-10 19:07:49 UTC",
+        "position": 0,
+        "branch_name": null,
+        "description": "test issue",
+        "milestone_id": null,
+        "state": "closed",
+        "iid": 1,
+        "url": "https://gitlab.com/manoj2378/codeship/issues/1",
+        "action": "close"
+    }
+}
 
 New issue
-{"object_kind":"issue","user":{"name":"noob","username":"cvnoob","avatar_url":"https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40\u0026d=identicon"},"object_attributes":{"id":158706,"title":"test","assignee_id":109710,"author_id":109710,"project_id":188295,"created_at":"2015-03-10 19:07:04 UTC","updated_at":"2015-03-10 19:07:04 UTC","position":0,"branch_name":null,"description":"test issue","milestone_id":null,"state":"opened","iid":1,"url":"https://gitlab.com/manoj2378/codeship/issues/1","action":"open"}}
+{
+    "object_kind": "issue",
+    "user": {
+        "name": "noob",
+        "username": "cvnoob",
+        "avatar_url": "https://secure.gravatar.com/avatar/b6eccedb46f528343a0bc007f50744a9?s=40&d=identicon"
+    },
+    "object_attributes": {
+        "id": 158706,
+        "title": "test",
+        "assignee_id": 109710,
+        "author_id": 109710,
+        "project_id": 188295,
+        "created_at": "2015-03-10 19:07:04 UTC",
+        "updated_at": "2015-03-10 19:07:04 UTC",
+        "position": 0,
+        "branch_name": null,
+        "description": "test issue",
+        "milestone_id": null,
+        "state": "opened",
+        "iid": 1,
+        "url": "https://gitlab.com/manoj2378/codeship/issues/1",
+        "action": "open"
+    }
+}
 
 push event from manoj2378/codeship.git
-{"before":"8ae35bfbbbc65da616ca6364d484369bf6772578","after":"07c729cb1a0104249ce33b5ef6899b992c12e70f","ref":"refs/heads/master","checkout_sha":"07c729cb1a0104249ce33b5ef6899b992c12e70f","user_id":109710,"user_name":"noob","project_id":188295,"repository":{"name":"codeship","url":"git@gitlab.com:manoj2378/codeship.git","description":"","homepage":"https://gitlab.com/manoj2378/codeship","git_http_url":"https://gitlab.com/manoj2378/codeship.git","git_ssh_url":"git@gitlab.com:manoj2378/codeship.git","visibility_level":20},"commits":[{"id":"07c729cb1a0104249ce33b5ef6899b992c12e70f","message":"gitlab: testing webhook\n","timestamp":"2015-03-11T00:27:36+05:30","url":"https://gitlab.com/manoj2378/codeship/commit/07c729cb1a0104249ce33b5ef6899b992c12e70f","author":{"name":"Manoj Babu","email":"manoj.katragadda@kore.com"}}],"total_commits_count":1}
+{
+    "before": "8ae35bfbbbc65da616ca6364d484369bf6772578",
+    "after": "07c729cb1a0104249ce33b5ef6899b992c12e70f",
+    "ref": "refs/heads/master",
+    "checkout_sha": "07c729cb1a0104249ce33b5ef6899b992c12e70f",
+    "user_id": 109710,
+    "user_name": "noob",
+    "project_id": 188295,
+    "repository": {
+        "name": "codeship",
+        "url": "git@gitlab.com:manoj2378/codeship.git",
+        "description": "",
+        "homepage": "https://gitlab.com/manoj2378/codeship",
+        "git_http_url": "https://gitlab.com/manoj2378/codeship.git",
+        "git_ssh_url": "git@gitlab.com:manoj2378/codeship.git",
+        "visibility_level": 20
+    },
+    "commits": [
+        {
+            "id": "07c729cb1a0104249ce33b5ef6899b992c12e70f",
+            "message": "gitlab: testing webhook\n",
+            "timestamp": "2015-03-11T00:27:36+05:30",
+            "url": "https://gitlab.com/manoj2378/codeship/commit/07c729cb1a0104249ce33b5ef6899b992c12e70f",
+            "author": {
+                "name": "Manoj Babu",
+                "email": "manoj.katragadda@kore.com"
+            }
+        }
+    ],
+    "total_commits_count": 1
+}
+
 
 Test Payload:
-{"before":"6b283e15dc0555a6fe3362db7eb6e42541955616","after":"8ae35bfbbbc65da616ca6364d484369bf6772578","ref":"refs/heads/master","checkout_sha":"8ae35bfbbbc65da616ca6364d484369bf6772578","user_id":109710,"user_name":"noob","project_id":188295,"repository":{"name":"codeship","url":"git@gitlab.com:manoj2378/codeship.git","description":"","homepage":"https://gitlab.com/manoj2378/codeship","git_http_url":"https://gitlab.com/manoj2378/codeship.git","git_ssh_url":"git@gitlab.com:manoj2378/codeship.git","visibility_level":20},"commits":[{"id":"8ae35bfbbbc65da616ca6364d484369bf6772578","message":"Update README.md","timestamp":"2015-03-09T16:09:08+05:30","url":"https://gitlab.com/manoj2378/codeship/commit/8ae35bfbbbc65da616ca6364d484369bf6772578","author":{"name":"manoj","email":"manoj.babu2378@gmail.com"}},{"id":"54dc0807678f32a64d85335ff1e80bf51c854ce7","message":"Update README.md","timestamp":"2015-03-09T16:02:31+05:30","url":"https://gitlab.com/manoj2378/codeship/commit/54dc0807678f32a64d85335ff1e80bf51c854ce7","author":{"name":"manoj","email":"manoj.babu2378@gmail.com"}},{"id":"6b283e15dc0555a6fe3362db7eb6e42541955616","message":"Snap-CI: Build check\n","timestamp":"2015-03-08T18:53:24+05:30","url":"https://gitlab.com/manoj2378/codeship/commit/6b283e15dc0555a6fe3362db7eb6e42541955616","author":{"name":"Manoj Babu","email":"manoj.katragadda@kore.com"}}],"total_commits_count":3}
+{
+    "before": "6b283e15dc0555a6fe3362db7eb6e42541955616",
+    "after": "8ae35bfbbbc65da616ca6364d484369bf6772578",
+    "ref": "refs/heads/master",
+    "checkout_sha": "8ae35bfbbbc65da616ca6364d484369bf6772578",
+    "user_id": 109710,
+    "user_name": "noob",
+    "project_id": 188295,
+    "repository": {
+        "name": "codeship",
+        "url": "git@gitlab.com:manoj2378/codeship.git",
+        "description": "",
+        "homepage": "https://gitlab.com/manoj2378/codeship",
+        "git_http_url": "https://gitlab.com/manoj2378/codeship.git",
+        "git_ssh_url": "git@gitlab.com:manoj2378/codeship.git",
+        "visibility_level": 20
+    },
+    "commits": [
+        {
+            "id": "8ae35bfbbbc65da616ca6364d484369bf6772578",
+            "message": "Update README.md",
+            "timestamp": "2015-03-09T16:09:08+05:30",
+            "url": "https://gitlab.com/manoj2378/codeship/commit/8ae35bfbbbc65da616ca6364d484369bf6772578",
+            "author": {
+                "name": "manoj",
+                "email": "manoj.babu2378@gmail.com"
+            }
+        },
+        {
+            "id": "54dc0807678f32a64d85335ff1e80bf51c854ce7",
+            "message": "Update README.md",
+            "timestamp": "2015-03-09T16:02:31+05:30",
+            "url": "https://gitlab.com/manoj2378/codeship/commit/54dc0807678f32a64d85335ff1e80bf51c854ce7",
+            "author": {
+                "name": "manoj",
+                "email": "manoj.babu2378@gmail.com"
+            }
+        },
+        {
+            "id": "6b283e15dc0555a6fe3362db7eb6e42541955616",
+            "message": "Snap-CI: Build check\n",
+            "timestamp": "2015-03-08T18:53:24+05:30",
+            "url": "https://gitlab.com/manoj2378/codeship/commit/6b283e15dc0555a6fe3362db7eb6e42541955616",
+            "author": {
+                "name": "Manoj Babu",
+                "email": "manoj.katragadda@kore.com"
+            }
+        }
+    ],
+    "total_commits_count": 3
+}

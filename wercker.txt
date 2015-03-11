@@ -8,3 +8,12 @@ http://devcenter.wercker.com/
 magnumci repo has the wercker.yml
 Payload:
 result=passed&type=build&application_owner_name=manoj2378&application_name=magnumci&git_branch=master&started_by=Manoj Babu&build_url=https://app.wercker.com/#build/54ff24e6244e982b2b06ebc8
+
+decoded Payload:
+    result: passed
+    started_by: Manoj Babu
+    git_branch: master
+    build_url: https://app.wercker.com/#build/55003bdc244e982b2b0ae9c8
+    application_name: magnumci
+    application_owner_name: manoj2378
+    type: build
