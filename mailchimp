@@ -1,9 +1,12 @@
-A Runscope Community Project — Learn more.
 
- RequestBin
+Events:
+subscribes
+unsubscribes
+profile updates
+cleaned address
+email changed
+campaign sending 
 
-  
-http://requestb.in
 POST /10f6ixg1
 application/x-www-form-urlencoded
 382 bytes
