@@ -1,0 +1,55 @@
+http://cloudblocks.tumblr.com/post/68793271164/building-the-deployment-nirvana
+Cloud66:
+    Build, deploy and manage your web applications, APIs and mobile backends on
+    your own servers on any cloud.
+{
+  "charged_amount": "$9.00",
+  "bill_frequency": 0,
+  "timestamp": 1426251002,
+  "event_type": "payment.done"
+}
+Setting up app:
+    Initialize the stack by providing your repository details.
+    Provide amazon/ you cloud provider access tokens.
+    Deploy.
+Configuring webhook:
+    Go to Account on the right side of the top nav.
+    click on notifications in the left nav.
+    Click on the Globe icon to configure webhook against the event.
+Events:
+    App authorized to access your account	
+    App deauthorized from accessing your account	
+    Payment done	
+    Payment failed
+Payloads:
+
+    Test Payloads:
+
+    App authorized to access your account	
+    {
+      "user": "jon@doe.com",
+      "app": "7c2c4ab2ae7ed4c33c3dacd1e9715f796ec222fd8985341128d7f7d485349caf",
+      "timestamp": 1426251338,
+      "event_type": "app.auth"
+    }
+    App deauthorized from accessing your account	
+    {
+      "user": "jon@doe.com",
+      "app": "7c2c4ab2ae7ed4c33c3dacd1e9715f796ec222fd8985341128d7f7d485349caf",
+      "timestamp": 1426251372,
+      "event_type": "app.deauth"
+    }
+    Payment done	
+    {
+      "charged_amount": "$9.00",
+      "bill_frequency": 0,
+      "timestamp": 1426251394,
+      "event_type": "payment.done"
+    }
+    Payment failed
+    {
+      "charged_amount": "$9.00",
+      "reason": "Your credit card company is not accessible",
+      "timestamp": 1426251424,
+      "event_type": "payment.fail"
+    }

@@ -1,0 +1,97 @@
+Intercom:
+    Intercom shows you who is using your product and makes it easy to personally
+    communicate with them through behavior-driven email and in-app messages.
+Setting up app:
+    Add the javascript snippet provided by intercom, as instructed.
+    Events can be generated via website and app.
+Configuring Webhook:
+    Go to settings icon,
+    choose -> Settings for {{ YOUR APP }}
+    Choose Webhook from leftnav, (bottom link);
+Events:
+    New Message from a User
+    Reply from a User
+    Reply from a Teammate
+    Note added to Conversation
+    Conversation assigned to Teammate
+    User Created
+    User Unsubscribed From Email
+    User tagged
+    User untagged
+    Company Created
+Payloads:
+    Test Notification:
+    {
+      "type" : "notification_event",
+      "app_id" : "gzas1i8o",
+      "data" : {
+        "type" : "notification_event_data",
+        "item" : {
+          "type" : "ping",
+          "message" : "\"Always be testing\" #interzen"
+        }
+      },
+      "links" : { },
+      "id" : null,
+      "topic" : "ping",
+      "delivery_status" : null,
+      "delivery_attempts" : 1,
+      "delivered_at" : 0,
+      "first_sent_at" : 1426231491,
+      "created_at" : 1426231491,
+      "self" : null
+    }
+Events cannot be triggered untill the plan is upgraded.
+Event specific api payloads availabel at https://doc.intercom.io/api/#webhook-models
+
+
+Subscription Object
+    {
+      "type": "notification_subscription",
+      "id": "nsub_6ab4c480-fd8b-11e3-958f-c779cae3e1b3",
+      "created_at": 1392731331,
+      "updated_at": 1392731331,
+      "service_type": "web",
+      "topics": ["company", "conversation.user.created"],
+      "url": "https://example.org/hooks/1",
+      "active": true,
+      "hub_secret": "7fa38fa4e7120189f631a6769dd4876b"
+    }
+Notification Object
+    {
+      "type": "notification_event",
+      "topic": "company.created",
+      "id": "notif_ccd8a4d0-f965-11e3-a367-c779cae3e1b3",
+      "created_at": 1392731331,
+      "delivery_attempts": 1,
+      "first_sent_at": 1392731392,
+      "data": {
+        "item": {
+          "type": "company",
+          "id": "531ee472cce572a6ec000006",
+          "name": "Blue Sun",
+          "company_id": "6",
+          "remote_created_at": 1394531169,
+          "created_at": 1394533506,
+          "updated_at": 1396874658,
+          "custom_attributes": {
+          }
+        }
+      }
+    }
+User Tag Object
+    {
+      "type": "user_tag",
+      "created_at": 1392731331,
+      "tag" : {
+          "id": "17513",
+          "name": "independent",
+          "type": "tag"
+        },
+      "user" : {
+          "type": "user",
+          "id": "530370b477ad7120001d",
+          "user_id": "25"
+      }
+    }
+

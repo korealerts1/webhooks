@@ -3,3 +3,8 @@ Events:
     specific data.
 Payload:
 message: {"check": "1534278", "checkname": "Example", "host": "kore-koresftest.cs14.force.com", "action": "assign", "incidentid": 2, "description": "down"}
+"koreUxMap": {
+    "body": "Server: <b>{{JSON.parse(message).host}}</b> is {{JSON.parse(message).description}}",
+    "title: "{{JSON.parse(message).incidentid}}. Server status updated for {{JSON.parse(message).checkname}}"
+}
+

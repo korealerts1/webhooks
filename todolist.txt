@@ -23,3 +23,15 @@ Datadog
     Deployment
     3/20/2015
     --> Basic configuration done.. needs paid account.
+Pingdom - done
+Semaphore- done
+Bit bucket - done
+Github -headers
+Help Scout -headers
+Enchant/supportfu 
+Sentry - fixing tomorrow api problem, cannot save the payload in mongo.
+
+Gosquared
+Mailchimp
+Intercom
+Jenkins

@@ -1,0 +1,215 @@
+
+{
+    "triggeredAlert": {
+        "boundary": "lower",
+        "value": 10,
+        "type": "concurrents"
+    },
+    "siteDetails": {
+        "user_id": 62825,
+        "acct": "GSN-331158-Q",
+        "email": "cvnoob1@gmail.com",
+        "first_name": "cv",
+        "last_name": "noob",
+        "site_name": "message.kore.com",
+        "domain": "message.kore.com",
+        "url": "http://message.kore.com/bt",
+        "timezone": "Asia/Kolkata",
+        "lock_date": null
+    },
+    "snapshot": {
+        "time": {
+            "time": 1426168845992,
+            "local": "2015-03-12T19:30:45+05:30"
+        },
+        "concurrents": {
+            "visitors": 0,
+            "returning": 0,
+            "pages": 0,
+            "active": 0,
+            "tagged": 0
+        },
+        "timeSeries": {
+            "visitors.total": [
+                {
+                    "time": "2015-03-12T19:00:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:01:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:02:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:03:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:04:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:05:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:06:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:07:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:08:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:09:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:10:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:11:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:12:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:13:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:14:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:15:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:16:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:17:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:18:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:19:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:20:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:21:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:22:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:23:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:24:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:25:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:26:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:27:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:28:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:29:00+05:30",
+                    "value": 0
+                },
+                {
+                    "time": "2015-03-12T19:30:00+05:30",
+                    "value": 0
+                }
+            ]
+        },
+        "pages": {
+            "list": [],
+            "cardinality": 0
+        },
+        "sources": {
+            "direct": 0,
+            "social": {
+                "list": [],
+                "visitors": 0,
+                "cardinality": 0
+            },
+            "organic": {
+                "list": [],
+                "visitors": 0,
+                "cardinality": 0
+            },
+            "site": {
+                "list": [],
+                "visitors": 0,
+                "cardinality": 0
+            },
+            "internal": {
+                "list": [],
+                "visitors": 0,
+                "cardinality": 0
+            }
+        },
+        "engagement": {
+            "timeOnSite": {
+                "breakdown": {
+                    "0": 0,
+                    "10": 0,
+                    "30": 0,
+                    "60": 0,
+                    "300": 0,
+                    "900": 0,
+                    "1800": 0
+                },
+                "average": 0
+            },
+            "visitDepth": {
+                "breakdown": {
+                    "1": 0,
+                    "2": 0,
+                    "5": 0,
+                    "15": 0,
+                    "30": 0,
+                    "60": 0
+                },
+                "detailedBreakdown": {},
+                "average": 0
+            }
+        }
+    },
+    "concurrents": 0
+}
