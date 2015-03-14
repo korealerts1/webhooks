@@ -1,0 +1,111 @@
+{
+    "attachments": [
+        {
+            "fallback": "Testing - #9 Aborted after 7.4 sec (<nulljob/Testing/9/|Open>)\nNo Tests found.",
+            "color": "warning",
+            "fields": [
+                {
+                    "short": false,
+                    "value": "Testing - #9 Aborted after 7.4 sec (<nulljob/Testing/9/|Open>)\nNo Tests found."
+                }
+            ]
+        }
+    ],
+    "channel": "#general"
+}
+
+{
+    "attachments": [
+        {
+            "fallback": "Testing - #6 Success after 1.6 sec (<nulljob/Testing/6/|Open>)\nNo Tests found.",
+            "color": "good",
+            "fields": [
+                {
+                    "short": false,
+                    "value": "Testing - #6 Success after 1.6 sec (<nulljob/Testing/6/|Open>)\nNo Tests found."
+                }
+            ]
+        }
+    ],
+    "channel": "#general"
+}
+
+{
+    "attachments": [
+        {
+            "fallback": "Testing - #5 Started by user Manoj (<nulljob/Testing/5/|Open>)",
+            "color": "danger",
+            "fields": [
+                {
+                    "short": false,
+                    "value": "Testing - #5 Started by user Manoj (<nulljob/Testing/5/|Open>)"
+                }
+            ]
+        }
+    ],
+    "channel": "#general"
+}
+Back to Normal: triggered when build fails and gets back to normal.
+{
+    "attachments": [
+        {
+            "fallback": "Testing - #5 Back to normal after 1.4 sec (<nulljob/Testing/5/|Open>)\nNo Tests found.",
+            "color": "good",
+            "fields": [
+                {
+                    "short": false,
+                    "value": "Testing - #5 Back to normal after 1.4 sec (<nulljob/Testing/5/|Open>)\nNo Tests found."
+                }
+            ]
+        }
+    ],
+    "channel": "#general"
+}
+Triggered when a job is run.
+{
+    {
+        "attachments": [
+            {
+                "fallback": "Testing - #4 Failure after 1.4 sec (<nulljob/Testing/4/|Open>)\nNo Tests found.",
+                "color": "danger",
+                "fields": [
+                    {
+                        "short": false,
+                        "value": "Testing - #4 Failure after 1.4 sec (<nulljob/Testing/4/|Open>)\nNo Tests found."
+                    }
+                ]
+            }
+        ],
+        "channel": "#general"
+    },
+    {
+        "attachments": [
+            {
+                "fallback": "No Changes.",
+                "color": "danger",
+                "fields": [
+                    {
+                        "short": false,
+                        "value": "No Changes."
+                    }
+                ]
+            }
+        ],
+        "channel": "#general"
+    },
+    {
+        "attachments": [
+            {
+                "fallback": "Testing - #4 Started by user Manoj (<nulljob/Testing/4/|Open>)",
+                "color": "danger",
+                "fields": [
+                    {
+                        "short": false,
+                        "value": "Testing - #4 Started by user Manoj (<nulljob/Testing/4/|Open>)"
+                    }
+                ]
+            }
+        ],
+        "channel": "#general"
+    }
+}
