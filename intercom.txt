@@ -8,6 +8,21 @@ Configuring Webhook:
     Go to settings icon,
     choose -> Settings for {{ YOUR APP }}
     Choose Webhook from leftnav, (bottom link);
+<%switch(topic){case \"conversation.user.created\":%> <%var title = \"New
+conversation created\" + data.item.name%><%;break;case
+\"conversation.user.replied\":%> <%var title = \"User \" + data.item.name + \"
+replied.\"%><%;break;case \"conversation.admin.replied\":%> <%var title =
+\"Admin \" + data.item.name + \" replied.\"%><%;break;case
+\"conversation.admin.assigned\":%> <%var title = \"Conversation assigned to \" +
+data.item.name%><%;break;case \"conversation.admin.noted\":%> <%var title =
+\"Admin \" + data.item.name + \" add a note.\"%><%;break;case
+\"user.created\":%> <%var title = \"New user \" + data.item.name + \"
+created.\"%><%;break;case \"user.unsubscribed\":%> <%var title = \"User \" +
+data.item.name + \" unsubscribed.\"%><%;break;case \"user.tag.created\":%> <%var
+title = \"Tag \" + data.item.name + \" has been created.\"%><%;break;case
+\"user.tag.deleted\":%> <%var title = \"Tag \" + data.item.name + \" has been
+deleted.\"%><%;break;case \"company.created\":%> <%var title = \"Company \" +
+data.item.name + \" has been created.\";break;%>}%><%=title%>
 Events:
     New Message from a User
     Reply from a User
@@ -44,20 +59,17 @@ Payloads:
 Events cannot be triggered untill the plan is upgraded.
 Event specific api payloads availabel at https://doc.intercom.io/api/#webhook-models
 
-
-Subscription Object
-    {
-      "type": "notification_subscription",
-      "id": "nsub_6ab4c480-fd8b-11e3-958f-c779cae3e1b3",
-      "created_at": 1392731331,
-      "updated_at": 1392731331,
-      "service_type": "web",
-      "topics": ["company", "conversation.user.created"],
-      "url": "https://example.org/hooks/1",
-      "active": true,
-      "hub_secret": "7fa38fa4e7120189f631a6769dd4876b"
-    }
 Notification Object
+var userCreate = {"topic": "conversation.user.created", "data": {"item": {"name": "Manoj"}}};
+var userReply = {"topic": "conversation.user.replied", "data": {"item": {"name": "Manoj"}}};
+var adminReply= {"topic": "conversation.admin.replied", "data": {"item": {"name": "Manoj"}}};
+var adminAssign= {"topic": "conversation.admin.assigned", "data": {"item": {"name": "Manoj"}}};
+var adminNoted= {"topic": "conversation.admin.noted", "data": {"item": {"name": "Manoj"}}};
+var userCreated= {"topic": "user.created", "data": {"item": {"name": "Manoj"}}};
+var userUnsub= {"topic": "user.unsubscribed", "data": {"item": {"name": "Manoj"}}};
+var tagCreate= {"topic": "user.tag.created", "data": {"item": {"name": "Manoj"}}};
+var tagDelete= {"topic": "user.tag.deleted", "data": {"item": {"name": "Manoj"}}};
+var companyCreate= {"topic": "company.created", "data": {"item": {"name": "Manoj"}}};
     {
       "type": "notification_event",
       "topic": "company.created",
@@ -79,19 +91,3 @@ Notification Object
         }
       }
     }
-User Tag Object
-    {
-      "type": "user_tag",
-      "created_at": 1392731331,
-      "tag" : {
-          "id": "17513",
-          "name": "independent",
-          "type": "tag"
-        },
-      "user" : {
-          "type": "user",
-          "id": "530370b477ad7120001d",
-          "user_id": "25"
-      }
-    }
-
