@@ -1,5 +1,6 @@
 Has 3rd-party integrations.
-Not sure about webhook
-Unable to signup.
-Could not get any confirmation email from them, and can't continue unless it is
-confirmed.
+Webhook support provided, 
+but we need a slash command support,
+slash command should trigger HTTP POST to the webhook offered by the workingOn
+
+Webhook supported to nofity WorkingOn but not vice-versa
