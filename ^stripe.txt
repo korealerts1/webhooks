@@ -1,0 +1,2 @@
+Webhook supported.
+https://stripe.com/docs/webhooks

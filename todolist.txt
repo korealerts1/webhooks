@@ -3,11 +3,6 @@
     3/20/2015
     --> Basic configuration done.. needs paid account.
 Sentry - fixing tomorrow api problem, cannot save the payload in mongo.
-Gosquared
-Intercom
-Jenkins
-Uservoice
-Svn
 Datadog
 Mercurial
 Gitblit

@@ -1,0 +1,2 @@
+NimbleHR is now BreezyHR
+No webhook support allowed.

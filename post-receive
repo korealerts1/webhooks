@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -e
+while read oldrev newrev ref
+do
+    branch=`echo $ref | cut -d/ -f3`
+    GIT_DIR="/var/www/WorkFlows.git" GIT_WORK_TREE="/var/www/WorkFlows" git checkout -f $branch
+    echo "git pull successful"
+done
+if [ "$branch" == "wf-builder" ]; 
+then
+    deploy_path='/var/www/wf-builder'
+else
+    deploy_path='/var/www/builder'
+fi
+echo $deploy_path
+cd /var/www/WorkFlows/buildernew
+grunt --force
+echo "grunt task successfull"
+cd $deploy_path
+sudo rm -rf dist/
+sudo mv /var/www/WorkFlows/buildernew/dist/ $deploy_path
+echo "moved grunt dist to $deploy_path"

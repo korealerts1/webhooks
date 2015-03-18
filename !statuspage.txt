@@ -1,0 +1,3 @@
+Webhook supported.
+Needs to upgrade plan for having webhook notifications.
+Not available for trial account.

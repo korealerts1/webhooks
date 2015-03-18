@@ -1,0 +1,4 @@
+Website URL: https://room.co/#/
+Needs to have a slash command to integrate.
+Works like google hangouts.
+

@@ -1,0 +1,2 @@
+Needs to write code consuming their webapi
+https://github.com/slackhq/hubot-slack

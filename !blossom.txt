@@ -1,0 +1,3 @@
+No webhook supported.
+Integration with slack is completely mutual to both the enterprises.
+Requires billing information in order to start a free trial.

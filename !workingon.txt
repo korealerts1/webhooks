@@ -1,0 +1,5 @@
+Has 3rd-party integrations.
+Not sure about webhook
+Unable to signup.
+Could not get any confirmation email from them, and can't continue unless it is
+confirmed.

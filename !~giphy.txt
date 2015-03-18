@@ -1,0 +1,8 @@
+https://github.com/josephschmitt/gifbot
+https://github.com/schuyler/gifbot
+Slack also has some internal service to search giphy
+
+Summary:
+    Integration with giphy sets up a slash command like /giphy /gifbot etc
+    Usage:
+        /giphy {{text}}
