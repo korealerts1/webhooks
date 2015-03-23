@@ -1,0 +1,26 @@
+Gitblit
+    Gitblit is an open-source, pure Java stack for managing, viewing, and serving Git repositories.
+
+Below are the configuration steps for GlitBlit.
+    - Download and unzip GlitBlit
+    - create script files with .groovy as extension. Optionally you can use the attached kore.groovy file.
+    - place the .groovy file(s) under <GITBLITHOME>\data\groovy]
+    - configure them in gitblit.properties file - <GITBLITHOME>\data\gitblit.properties]
+    	groovy.preReceiveScripts = kore.groovy
+    	groovy.postReceiveScripts = kore.groovy
+    - Run GlitBlit by executing <GITBLITHOME>\gitblit.bat file.
+    - Create a new repository and check in a file.
+    - Modify file again and push it.
+    - Check if the groovy file got executed or not. (can be validated using http://requestb.in)
+
+Events:
+    Post-push notification
+
+Payload:
+    {
+        "user": "admin",
+        "repo": "test.git",
+        "message": "test commit message",
+        "summaryUrl": "http://localhost:8090/summary/test.git",
+        "commitUrl": "http://localhost:8090/commit/{commitId}"
+    }
