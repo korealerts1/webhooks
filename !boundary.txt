@@ -1,3 +1,2 @@
 Able to setup alerts from boundary.
 Alerts are received via Email, and to Slack Channel, but not to requestBin.
-Problem has to be revisited.

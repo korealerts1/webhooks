@@ -4,3 +4,6 @@ but we need a slash command support,
 slash command should trigger HTTP POST to the webhook offered by the workingOn
 
 Webhook supported to nofity WorkingOn but not vice-versa
+
+This requires us to go live, since we need to request them to integrate with our
+services.

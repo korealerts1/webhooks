@@ -5,7 +5,6 @@
 Sentry - fixing tomorrow api problem, cannot save the payload in mongo.
 Datadog
 Mercurial
-Gitblit
 Librato
 Cloud66
 Nagios
