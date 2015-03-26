@@ -1,1 +1,84 @@
 http://docs.travis-ci.com/user/notifications/#Webhook-notification
+
+Notes:
+    You will see one of the following values in the status/result fields that represent the state of the build.
+    
+    0: Represents a build that has completed successfully
+    1: Represents a build that has not yet completed or has completed and failed
+    Additionally a message will be present in the status_message/result_message fields that further describe the status of the build.
+    
+    Pending: A build has been requested
+    Passed: The build completed successfully
+    Fixed: The build completed successfully after a previously failed build
+    Broken: The build completed in failure after a previously successful build
+    Failed: The build is the first build for a new branch and has failed
+    Still Failing: The build completed in failure after a previously failed build
+    For pull requests, the type field will have the value pull_request,
+    and a pull_request_number field is included
+    too, pointing to the pull request's issue number on GitHub.
+
+Payloads:
+    {
+        "id": 1,
+        "number": "1",
+        "status": null,
+        "started_at": null,
+        "finished_at": null,
+        "status_message": "Passed",
+        "commit": "62aae5f70ceee39123ef",
+        "branch": "master",
+        "message": "the commit message",
+        "compare_url": "https://github.com/svenfuchs/minimal/compare/master...develop",
+        "committed_at": "2011-11-11T11: 11: 11Z",
+        "committer_name": "Sven Fuchs",
+        "committer_email": "svenfuchs@artweb-design.de",
+        "author_name": "Sven Fuchs",
+        "author_email": "svenfuchs@artweb-design.de",
+        "type": "push",
+        "build_url": "https://travis-ci.org/svenfuchs/minimal/builds/1",
+        "repository": {
+            "id": 1,
+            "name": "minimal",
+            "owner_name": "svenfuchs",
+            "url": "http://github.com/svenfuchs/minimal"
+        },
+        "config": {
+            "notifications": {
+                "webhooks": [
+                    "http://evome.fr/notifications",
+                    "http://example.com/"
+                ]
+            }
+        },
+        "matrix": [
+            {
+                "id": 2,
+                "repository_id": 1,
+                "number": "1.1",
+                "state": "created",
+                "started_at": null,
+                "finished_at": null,
+                "config": {
+                    "notifications": {
+                        "webhooks": [
+                            "http://evome.fr/notifications",
+                            "http://example.com/"
+                        ]
+                    }
+                },
+                "status": null,
+                "log": "",
+                "result": null,
+                "parent_id": 1,
+                "commit": "62aae5f70ceee39123ef",
+                "branch": "master",
+                "message": "the commit message",
+                "committed_at": "2011-11-11T11: 11: 11Z",
+                "committer_name": "Sven Fuchs",
+                "committer_email": "svenfuchs@artweb-design.de",
+                "author_name": "Sven Fuchs",
+                "author_email": "svenfuchs@artweb-design.de",
+                "compare_url": "https://github.com/svenfuchs/minimal/compare/master...develop"
+            }
+        ]
+    }

@@ -1,0 +1,113 @@
+https://www.runscope.com/docs/radar/notifications#webhook
+Runscope:
+    Online monitoring service
+
+Configuring:
+    Add a test and request to test.
+    Run the test.
+
+Events:
+    When a test is passed.
+    When a test is failed.
+
+KoreUxMap:
+    title: "Test <a href=<%=test_run_url%>><%=result===\"pass\"? \"Passed\": \"Failed\"%></a> at location <%=region_name%>"
+    body: "Test name: <a href=<%=test_url%>><%=test_name%></a><br>Team name: <%=team_name%><br>Bucket: <%=bucket_name%><br><%=obj.hasOwnProperty(requests)? \"Number of requests: \"+ requests.length : \"\"%>"
+Payloads:
+When  a test is passed
+    {
+        "started_at": 1427284061.017342,
+        "bucket_key": "hvqez62lntd6",
+        "region_name": "US East - Northern Virginia",
+        "finished_at": 1427284062.81887,
+        "region": "us1",
+        "initial_variables": {},
+        "test_url": "https://www.runscope.com/radar/hvqez62lntd6/0e2fed91-7680-4284-b549-2113ae29a554",
+        "test_run_url": "https://www.runscope.com/radar/hvqez62lntd6/0e2fed91-7680-4284-b549-2113ae29a554/results/8c03386c-ebda-4dfe-8301-9bae55ea653c",
+        "test_run_id": "8c03386c-ebda-4dfe-8301-9bae55ea653c",
+        "team_id": "03e0812b-fac5-4735-87d8-2d8900ed08d3",
+        "bucket_name": "Elegant Meal",
+        "result": "pass",
+        "agent": null,
+        "test_name": "test",
+        "team_name": "kroe",
+        "test_id": "0e2fed91-7680-4284-b549-2113ae29a554",
+        "requests": [
+            {
+                "response_size_bytes": 196,
+                "url": "https://yourapihere.com/",
+                "variables": {
+                    "fail": 0,
+                    "total": 0,
+                    "pass": 0
+                },
+                "step_type": "request",
+                "note": "note1",
+                "result": "pass",
+                "response_status_code": "200",
+                "scripts": {
+                    "fail": 0,
+                    "total": 0,
+                    "pass": 0
+                },
+                "method": "GET",
+                "response_time_ms": 13,
+                "assertions": {
+                    "fail": 0,
+                    "total": 1,
+                    "pass": 1
+                }
+            }
+        ],
+        "trigger_url": "https://api.runscope.com/radar/fdbf11be-f250-4eac-b5b4-f112f3dc0845/trigger"
+    }
+
+
+When  a test is failed 
+
+    {
+        "started_at": 1427284410.359081,
+        "bucket_key": "hvqez62lntd6",
+        "region_name": "US East - Northern Virginia",
+        "finished_at": 1427284501.558501,
+        "region": "us1",
+        "initial_variables": {},
+        "test_url": "https://www.runscope.com/radar/hvqez62lntd6/0e2fed91-7680-4284-b549-2113ae29a554",
+        "test_run_url": "https://www.runscope.com/radar/hvqez62lntd6/0e2fed91-7680-4284-b549-2113ae29a554/results/82ccb31f-3e3b-461a-9946-d8f4c3419415",
+        "test_run_id": "82ccb31f-3e3b-461a-9946-d8f4c3419415",
+        "team_id": "03e0812b-fac5-4735-87d8-2d8900ed08d3",
+        "bucket_name": "Elegant Meal",
+        "result": "fail",
+        "agent": null,
+        "test_name": "test",
+        "team_name": "kroe",
+        "test_id": "0e2fed91-7680-4284-b549-2113ae29a554",
+        "requests": [
+            {
+                "response_size_bytes": -1,
+                "url": "https://www.dasdsa.com",
+                "variables": {
+                    "fail": 0,
+                    "total": 0,
+                    "pass": 0
+                },
+                "step_type": "request",
+                "note": "note1",
+                "result": "fail",
+                "response_status_code": "None",
+                "scripts": {
+                    "fail": 0,
+                    "total": 0,
+                    "pass": 0
+                },
+                "method": "GET",
+                "response_time_ms": -1,
+                "assertions": {
+                    "fail": 1,
+                    "total": 1,
+                    "pass": 0
+                }
+            }
+        ],
+        "trigger_url": "https://api.runscope.com/radar/fdbf11be-f250-4eac-b5b4-f112f3dc0845/trigger"
+    }
