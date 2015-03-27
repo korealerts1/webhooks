@@ -1,5 +1,5 @@
 https://www.userlike.com/en/dashboard/config/addon/api
-
+Userlike(Customizable chat platform)
 Events:
     Offline Message - Receive
     Chat Meta - Start
@@ -12,28 +12,14 @@ Events:
     Operator - Offline
     Operator - Away
     Operator - Back
-JSON.parse(payload).
-<% switch(payload.action_type){case \"ticket.created\" :  %><%var title ='New Ticket - '%><%;break;case \"agent.reply.created\" :  %><% var title ='Agent '+payload.reply.replier.name +' replied to ticket - '%><%;break;case \"customer.reply.created\" :  %><%var title = 'Customer '+payload.ticket.requester.name + ' replied to ticket - '%><%;break;case \"comment.created\" :  %><% var title= payload.ticket.requester.name+' commented on ticket - '%><%;break;}%><%=title%><a href=\"<%=payload.ticket.url%>
+Alert Desc: Name :Userlike Alerts Description: Get all chat notifications from userlike
+Url: https://www.userlike.com/en/
+Icon: https://slack.global.ssl.fastly.net/7bf4/img/services/userlike_128.png
 KoreUxMap:
+    title: "<%var payloadObj = JSON.parse(payload);%><%switch(payloadObj._event){ case \"receive\": %><% var ulTitle=\"\"; if(payloadObj._type === \"offline_message\"){ulTitle = \"Offline message from <a href=mailto:\" + payloadObj.client_email+ \">\"+ payloadObj.client_name+ \"</a>\";}else {ulTitle= \" Chat message received from <a href=mailto:\" + payloadObj.client_email+ \">\"+ payloadObj.client_name+ \"</a>\";}%><%;break;case \"start\" : %><% var ulTitle=\"<a href=mailto:\" + payloadObj.client_email + \">\"+ payloadObj.client_name + \"</a> started a <a href=\" + payloadObj.url + \">chat</a> conversation.\"%><%;break;case \"forward\":%><% var ulTitle=\"Operator <a href=mailto:\" + payloadObj.operator_created.email + \">\"+ payloadObj.operator_created.name +\"</a> forwarded <a href=\"+ payloadObj.url+ \">chat</a> convesation with <a href=mailto:\" +payloadObj.client_email +\">\"+ payloadObj.client_name +\"</a> to Operator <a href=mailto:\" + payloadObj.operator_current.email + \">\"+ payloadObj.operator_current.name + \"</a>\"%><%;break;case \"rating\":%><% var ulTitle=\"Client <a href=mailto:\"+ payloadObj.client_email + \">\"+ payloadObj.client_name + \"</a> rated <a href=\" + payloadObj.url + \">\"+payloadObj.rate + \"</a> to Operator <a href=mailto:\"+ payloadObj.operator_current.email + \">\" + payloadObj.operator_current.name + \"</a>\" %><%;break;case \"survey\":%><% var ulTitle=\"Client <a href=mailto:\" + payloadObj.client_email + \">\" + payloadObj.client_name + \"</a> has filled out <a href=\" + payloadObj.url + \">survey</a> for Operator <a href=mailto:\" + payloadObj.operator_current.email + \">\" + payloadObj.operator_current.name %><%;break;case \"config\":%><% var ulTitle=\"Chat widget <a href=\" + payloadObj.status_url + \">configuration</a> has been updated\"%><%;break;case \"online\":%><% var ulTitle=\"Operator <a href=mailto:\"+ payloadObj.email + \">\" + payloadObj.name + \" is online\"%><%;break;case \"offline\":%><% var ulTitle=\"Operator <a href=mailto:\"+ payloadObj.email + \">\" + payloadObj.name + \" is offline\"%><%;break;case \"away\":%><% var ulTitle=\"Operator <a href=mailto:\"+ payloadObj.email + \">\" + payloadObj.name + \" is away\"%><%;break;case \"back\":%><% var ulTitle=\"Operator <a href=mailto:\"+ payloadObj.email + \">\" + payloadObj.name + \" is back\"%><%;break;}%><%=ulTitle%>"
 
-    title: "<%switch(_event){ case \"receive\": %><% var
-    ulTitle=\"\"; if(_type === "offline_message"{ulTitle = \"Offline message
-    from <a href=\" + client_email+ \">\"+ client_name+ \"</a>\"})%><%;break;case \"start\" : %><% var ulTitle=\"\"%><%;break;case
-    \"forward\"%><% var ulTitle=\"\"%><%;break;case \"rating\"%><% var
-    ulTitle=\"\"%><%;break;case \"survey\"%><% var ulTitle=\"\"%><%;break;case
-    \"config\"%><% var ulTitle=\"\"%><%;break;case \"online\"%><% var
-    ulTitle=\"\"%><%;break;case \"offline\"%><% var ulTitle=\"\"%><%;break;case
-    \"away\"%><% var ulTitle=\"\"%><%;break;case \"back\"%><% var
-    ulTitle=\"\"%><%;break;}%>"
+    body: "<%var payloadObj = JSON.parse(payload);%><%switch(payloadObj._event){ case \"receive\": %><% if(payloadObj._type === \"offline_message\"){var ulBody = payloadObj.message} else{var ulBody = payloadObj.messages.length>0? payloadObj.messages[0].message : \"No message found\"}%><%;break;case \"start\" : %><% var ulBody=\"\"%><%;break;case \"forward\":%><% var ulBody=\"\"%><%;break;case \"rating\":%><% var ulBody=\"\"%><%;break;case \"survey\":%><% var ulBody= payloadObj.post_survey_option%><%;break;case \"config\":%><% var ulBody=\"\"%><%;break;case \"online\":%><% var ulBody=\"\"%><%;break;case \"offline\":%><% var ulBody=\"\"%><%;break;case \"away\":%><% var ulBody=\"\"%><%;break;case \"back\":%><% var ulBody=\"\"%><%;break;}%><%=ulBody%>"
 
-    body: "<%switch(_event){ case \"receive\": %><% var
-    ulTitle=\"\"%><%;break;case \"start\" : %><% var ulTitle=\"\"%><%;break;case
-    \"forward\"%><% var ulTitle=\"\"%><%;break;case \"rating\"%><% var
-    ulTitle=\"\"%><%;break;case \"survey\"%><% var ulTitle=\"\"%><%;break;case
-    \"config\"%><% var ulTitle=\"\"%><%;break;case \"online\"%><% var
-    ulTitle=\"\"%><%;break;case \"offline\"%><% var ulTitle=\"\"%><%;break;case
-    \"away\"%><% var ulTitle=\"\"%><%;break;case \"back\"%><% var
-    ulTitle=\"\"%><%;break;}%>"
 Payloads:
     Offline Message - Receive
     {
